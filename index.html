@@ -8,9 +8,9 @@
     <script src="js/mocha.js"></script>
   </head>
   <body
-    class="bg-base text-text px-16 pt-10 flex flex-col mx-auto max-w-screen-md px-3"
+    class="bg-base text-text px-16 pt-10 flex flex-col gap-8 mx-auto max-w-screen-md px-3"
   >
-    <div class="w-full flex gap-8">
+    <div class="w-full flex gap-8 mb-6">
       <div class="w-full md:w-2/3">
         <div class="mb-2">
           <h1 class="text-3xl font-bold mb-1">hey, I'm skyfall!</h1>
@@ -21,7 +21,7 @@
             >Technologies</small
           >
           <div
-            class="flex gap-4 *:fill-current *:w-8 hover:*:fill-lavender *:transition"
+            class="flex gap-4 *:fill-current *:w-8 hover:*:fill-lavender *:transition *:cursor-pointer"
           >
             <svg
               role="img"
@@ -105,6 +105,29 @@
           class="rounded-md shadow-sm w-24 h-24 sm:w-64 sm:h-64"
         />
       </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h1 class="font-semibold text-lg">Blog</h1>
+      <ul class="space-y-2">
+        <li class="flex gap-3">
+          <a
+            href="/"
+            class="underline font-medium text-subtext0 hover:text-mauve transition"
+          >
+            How to build a blog with SvelteKit and Tailwind CSS
+          </a>
+          <p class="text-overlay0">2 days ago</p>
+        </li>
+        <li class="flex gap-3">
+          <a
+            href="/"
+            class="underline font-medium text-subtext0 hover:text-mauve transition"
+          >
+            Hello world!
+          </a>
+          <p class="text-overlay0">2 days ago</p>
+        </li>
+      </ul>
     </div>
   </body>
 </html>
