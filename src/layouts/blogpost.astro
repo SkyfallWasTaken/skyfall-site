@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import Layout from "./layout.astro";
+import FormattedDate from "../components/ui/formatted-date.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+const { title, description, pubDate } = Astro.props;
+---
+
+<Layout title={title}>
+  <main class="max-w-full text-text my-12 prose">
+    <article>
+      <div class="mx-6 sm:mx-auto m-0 text-center">
+        <!-- Title, date and description -->
+        <h1 class="text-4xl font-black text-text mb-3">{title}</h1>
+        <p class="text-lg italic mb-2">{description}</p>
+        <div>
+          <FormattedDate date={pubDate} />
+        </div>
+
+        <hr />
+
+        <!-- Content -->
+        <div class="text-left text-lg">
+          <slot />
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>

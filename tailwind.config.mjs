@@ -1,4 +1,5 @@
 import catppuccin from "@catppuccin/tailwindcss"
+import typography from "@tailwindcss/typography"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,6 +10,7 @@ export default {
 	plugins: [
 		catppuccin({
 			defaultFlavour: "mocha"
-		})
+		}),
+		typography
 	],
 }
