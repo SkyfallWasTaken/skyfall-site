@@ -1,0 +1,122 @@
+---
+import Layout from "../layouts/layout.astro";
+import Button from "../components/ui/button.astro";
+import Badge from "../components/ui/badge.astro";
+import BadgeCircle from "../components/ui/badge-circle.astro";
+
+import RustIcon from "../components/home/rust-icon.astro";
+import TsIcon from "../components/home/ts-icon.astro";
+import SvelteIcon from "../components/home/svelte-icon.astro";
+import AstroIcon from "../components/home/astro-icon.astro";
+import TwIcon from "../components/home/tw-icon.astro";
+import { Clock as ClockIcon } from "lucide-astro";
+
+import { Image } from "astro:assets";
+import logoImage from "../img/logo.png";
+
+const quotes = [
+  "code whisperer by day, chaos enthusiast by night",
+  "freefalling through the internet",
+  "the internet is a series of tubes",
+  "welcome to the internet, have a look around",
+  "it's time to build!",
+  "bashing bits and bytes",
+  `enjoy your ${new Date()
+    .toLocaleDateString("en-US", {
+      weekday: "long",
+    })
+    .toLowerCase()}!`,
+  "code is poetry (well, sometimes)",
+  "it's time to sail the high seas!",
+  "it's better to be a pirate than to join the navy!",
+  "aye aye cap'n!",
+];
+const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+const initialTime = new Date().toLocaleTimeString("en-GB", {
+  timeZone: "Europe/London",
+  hour12: true,
+  hour: "numeric",
+  minute: "numeric",
+});
+---
+
+<Layout title="Home">
+  <div class="space-y-9">
+    <div class="flex flex-col sm:flex-row items-stretch gap-4">
+      <div id="hero">
+        <div class="mb-2" x-data>
+          <h1 class="text-3xl font-bold mb-1">Hey, I'm Mahad!👋</h1>
+          <p class="mb-0 font-mono">{randomQuote}</p>
+        </div>
+        <div class="space-y-1 mb-6">
+          <small class="uppercase font-semibold text-overlay2 mb-4"
+            >Technologies</small
+          >
+          <div
+            class="flex gap-4 *:fill-current *:w-8 hover:*:fill-lavender *:transition *:cursor-pointer"
+          >
+            <RustIcon />
+            <TsIcon />
+            <SvelteIcon />
+            <AstroIcon />
+            <TwIcon />
+          </div>
+        </div>
+        <div class="flex w-fit gap-2 mb-4">
+          <Badge>
+            <BadgeCircle fill="fill-green" slot="pre" />
+            <span slot="content">Listening to 3 O'Clock Things - AJR</span>
+          </Badge>
+          <Badge>
+            <ClockIcon class="w-3.5 h-3.5" slot="pre" />
+            <span slot="content" id="current-time">{initialTime}</span>
+          </Badge>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <Button variant="primary">View my blog</Button>
+          <Button variant="secondary">Check out my projects</Button>
+        </div>
+      </div>
+      <div class="hidden sm:block sm:w-1/3 h-full ml-auto">
+        <div class="relative w-full h-full">
+          <Image
+            src={logoImage}
+            loading="eager"
+            alt="Skyfall's logo"
+            class="h-full rounded-md shadow-sm object-cover"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <h1 class="font-semibold text-lg">Blog</h1>
+      <ul class="space-y-2 leading-tight flex flex-col gap-2 sm:gap-0">
+        <li class="flex flex-col sm:flex-row gap-1 sm:gap-3">
+          <a
+            href="/"
+            class="underline font-medium text-subtext0 hover:text-mauve transition"
+          >
+            How I built my blog with Astro and Tailwind CSS
+          </a>
+          <p class="text-overlay0">2 days ago</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const timeElement = document.getElementById("current-time");
+  if (timeElement) {
+    setInterval(() => {
+      timeElement.textContent = new Date().toLocaleTimeString("en-GB", {
+        timeZone: "Europe/London",
+        hour12: true,
+        hour: "numeric",
+        minute: "numeric",
+      });
+    }, 1000);
+  }
+</script>
