@@ -1,11 +1,15 @@
 ---
 import Layout from "../layouts/layout.astro";
 import Button from "../components/ui/button.astro";
+import Badge from "../components/ui/badge.astro";
+import BadgeCircle from "../components/ui/badge-circle.astro";
+
 import RustIcon from "../components/home/rust-icon.astro";
 import TsIcon from "../components/home/ts-icon.astro";
 import SvelteIcon from "../components/home/svelte-icon.astro";
 import AstroIcon from "../components/home/astro-icon.astro";
 import TwIcon from "../components/home/tw-icon.astro";
+import { Clock as ClockIcon } from "lucide-astro";
 
 import { Image } from "astro:assets";
 import logoImage from "../img/logo.png";
@@ -52,16 +56,17 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
             <TwIcon />
           </div>
         </div>
-        <div
-          class="flex w-fit gap-2 items-center bg-surface0 rounded-md shadow-sm px-3 py-2 mb-6"
-        >
-          <svg width="16" height="16" class="fill-green">
-            <circle cx="8" cy="8" r="6"></circle>
-          </svg>
-          <small class="font-semibold text-text">
-            Listening to 3 O'Clock Things - AJR
-          </small>
+        <div class="flex w-fit gap-2 mb-4">
+          <Badge>
+            <BadgeCircle fill="fill-green" slot="pre" />
+            <span slot="content">Listening to 3 O'Clock Things - AJR</span>
+          </Badge>
+          <Badge>
+            <ClockIcon class="w-3.5 h-3.5" slot="pre" />
+            <span slot="content">19:41 PM</span>
+          </Badge>
         </div>
+
         <div class="flex flex-col sm:flex-row gap-3">
           <Button variant="primary">View my blog</Button>
           <Button variant="secondary">Check out my projects</Button>
