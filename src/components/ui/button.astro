@@ -1,0 +1,11 @@
+---
+const { variant = "secondary" } = Astro.props as {
+  variant: "primary" | "secondary";
+};
+---
+
+<button
+  class={`rounded-md shadow-sm ${variant == "primary" ? "bg-mauve text-base" : "bg-surface0 text-text"} font-semibold px-4 py-2 hover:brightness-[115%] transition duration-300`}
+>
+  <slot />
+</button>
