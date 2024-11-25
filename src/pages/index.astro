@@ -32,6 +32,12 @@ const quotes = [
   "aye aye cap'n!",
 ];
 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+const initialTime = new Date().toLocaleTimeString("en-GB", {
+  timeZone: "Europe/London",
+  hour12: true,
+  hour: "numeric",
+  minute: "numeric",
+});
 ---
 
 <Layout title="Home">
@@ -63,7 +69,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
           </Badge>
           <Badge>
             <ClockIcon class="w-3.5 h-3.5" slot="pre" />
-            <span slot="content">19:41 PM</span>
+            <span slot="content" id="current-time">{initialTime}</span>
           </Badge>
         </div>
 
@@ -100,3 +106,17 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     </div>
   </div>
 </Layout>
+
+<script>
+  const timeElement = document.getElementById("current-time");
+  if (timeElement) {
+    setInterval(() => {
+      timeElement.textContent = new Date().toLocaleTimeString("en-GB", {
+        timeZone: "Europe/London",
+        hour12: true,
+        hour: "numeric",
+        minute: "numeric",
+      });
+    }, 1000);
+  }
+</script>
