@@ -109,7 +109,7 @@ export const prerender = false;
           latestFivePosts.map((post) => (
             <li class="flex flex-col sm:flex-row gap-1 sm:gap-3">
               <a
-                href="/"
+                href={`/posts/${post.slug}`}
                 class="underline font-medium text-subtext0 hover:text-mauve transition"
               >
                 {post.data.title}
