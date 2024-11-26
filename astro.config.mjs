@@ -11,6 +11,15 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://skyfall.dev',
   integrations: [tailwind(), sitemap()],
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'catppuccin-macchiato',
+        dark: 'catppuccin-macchiato',
+      },
+    },
+  },
+
   output: 'hybrid',
   adapter: cloudflare()
 });
