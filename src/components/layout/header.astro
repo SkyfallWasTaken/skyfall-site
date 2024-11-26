@@ -1,8 +1,27 @@
-<header class="flex mb-4">
+---
+const NAV_ITEMS = [
+  { href: "/", text: "Home" },
+  { href: "/posts", text: "Blog" },
+  { href: "/projects", text: "Projects" },
+  { href: "/contact", text: "Contact" },
+];
+---
+
+<nav
+  class="flex gap-2 text-subtext0 hover:*:text-subtext1"
+  aria-label="Breadcrumb"
+>
   <a href="/" class="font-semibold">Mahad Kalam</a>
-  <ul class="ml-auto flex gap-2 text-subtext0 hover:*:text-subtext1">
-    <li class="*:underline *:underline-offset-[3px] *:decoration-white/30">
-      <a href="/">e</a>
-    </li>
-  </ul>
-</header>
+  <ol class="flex ml-auto items-center space-x-2">
+    {
+      NAV_ITEMS.map((item) => (
+        <li class="*:underline *:underline-offset-[3px] *:decoration-white/30 breadcrumb-item">
+          <a href={item.href} class="text-subtext0 hover:text-subtext1">
+            {item.text}
+          </a>
+          <li class="separator last:hidden" aria-hidden="true">/</li> 
+        </li>
+      ))
+    }
+  </ol>
+</nav>
