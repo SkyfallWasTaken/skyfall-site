@@ -20,10 +20,6 @@ export default defineConfig({
     },
   },
 
-  env: {
-    schema: {
-      DISCORD_USER_ID: envField.string({ context: "client", access: "public" }),
-    }
-  },
+  output: "hybrid",
   adapter: cloudflare()
 });

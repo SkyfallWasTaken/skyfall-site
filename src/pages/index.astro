@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { intlFormatDistance } from "date-fns";
-import { DISCORD_USER_ID } from "astro:env/client";
 
 import Layout from "../layouts/layout.astro";
 import Button from "../components/ui/button.astro";
@@ -58,9 +57,7 @@ export const prerender = false;
     <div class="flex flex-col sm:flex-row items-stretch gap-4">
       <div id="hero">
         <div class="mb-2" x-data>
-          <h1 class="text-3xl font-bold mb-1">
-            Hey, I'm Mahad! s{DISCORD_USER_ID}s 👋
-          </h1>
+          <h1 class="text-3xl font-bold mb-1">Hey, I'm Mahad! 👋</h1>
           <p class="mb-0 font-mono">{randomQuote}</p>
         </div>
         <div class="space-y-1 mb-6">
