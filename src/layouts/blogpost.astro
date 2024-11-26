@@ -13,18 +13,22 @@ const { title, description, pubDate } = Astro.props;
     <article>
       <div class="mx-6 sm:mx-auto m-0 text-center">
         <!-- Title, date and description -->
-        <h1 class="text-4xl font-black text-text mb-3">{title}</h1>
+        <h1
+          class="text-4xl font-black text-text prose-headings:m-2 prose-headings:p-0"
+        >
+          {title}
+        </h1>
         <p class="text-lg italic mb-2">{description}</p>
         <div>
           <FormattedDate date={pubDate} />
         </div>
 
-        <hr />
+        <hr class="h-px my-8 bg-surface0 border-0" />
 
         <!-- Content -->
-        <div class="text-left text-lg">
+        <article class="text-left text-lg">
           <slot />
-        </div>
+        </article>
       </div>
     </article>
   </main>
