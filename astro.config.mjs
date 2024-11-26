@@ -20,6 +20,15 @@ export default defineConfig({
     },
   },
 
+  experimental: {
+    env: {
+      schema: {
+        DISCORD_USER_ID: envField.string({ context: "client", access: "public" }),
+      }
+    },
+    serverIslands: true,
+  },
+
   output: "hybrid",
   adapter: cloudflare()
 });

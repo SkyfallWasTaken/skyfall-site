@@ -1,0 +1,36 @@
+---
+import { DISCORD_USER_ID } from "astro:env/client";
+import { fetchUserData as fetchLanyardUserData } from "lanyard-wrapper";
+
+import Badge from "../ui/badge.astro";
+import BadgeCircle from "../ui/badge-circle.astro";
+
+enum DiscordStatus {
+  ONLINE = "online",
+  IDLE = "idle",
+  DND = "dnd",
+  OFFLINE = "offline",
+}
+const STATUS_COLOURS = {
+  [DiscordStatus.ONLINE]: "green",
+  [DiscordStatus.IDLE]: "yellow",
+  [DiscordStatus.DND]: "green", // I'm basically always on DND anyway
+  [DiscordStatus.OFFLINE]: "gray",
+};
+const STATUS_TEXT = {
+  [DiscordStatus.ONLINE]: "Online",
+  [DiscordStatus.IDLE]: "Idle",
+  [DiscordStatus.DND]: "Online", // Again, I'm basically always on DND anyway
+  [DiscordStatus.OFFLINE]: "Offline",
+};
+
+const d = await fetchLanyardUserData(DISCORD_USER_ID);
+const status = d.discord_status as DiscordStatus;
+---
+
+<Badge>
+  <BadgeCircle fill={`fill-${STATUS_COLOURS[status]}`} slot="pre" />
+  <span slot="content">
+    {STATUS_TEXT[status]}
+  </span>
+</Badge>

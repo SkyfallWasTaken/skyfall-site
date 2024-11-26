@@ -7,6 +7,7 @@ import Layout from "../layouts/layout.astro";
 import Button from "../components/ui/button.astro";
 import Badge from "../components/ui/badge.astro";
 import BadgeCircle from "../components/ui/badge-circle.astro";
+import OnlineStatus from "../components/home/online-status.astro";
 
 import RustIcon from "../components/home/rust-icon.astro";
 import TsIcon from "../components/home/ts-icon.astro";
@@ -75,10 +76,7 @@ export const prerender = false;
           </div>
         </div>
         <div class="flex w-fit gap-2 mb-4">
-          <Badge>
-            <BadgeCircle fill="fill-green" slot="pre" />
-            <span slot="content">Listening to 3 O'Clock Things - AJR</span>
-          </Badge>
+          <OnlineStatus />
           <Badge>
             <ClockIcon class="w-3.5 h-3.5" slot="pre" />
             <span slot="content" id="current-time">{initialTime}</span>
