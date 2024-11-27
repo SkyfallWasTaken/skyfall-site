@@ -5,27 +5,21 @@ import { fetchUserData as fetchLanyardUserData } from "lanyard-wrapper";
 import Badge from "../ui/badge.astro";
 import BadgeCircle from "../ui/badge-circle.astro";
 
-enum DiscordStatus {
-  ONLINE = "online",
-  IDLE = "idle",
-  DND = "dnd",
-  OFFLINE = "offline",
-}
 const STATUS_COLOURS = {
-  [DiscordStatus.ONLINE]: "green",
-  [DiscordStatus.IDLE]: "yellow",
-  [DiscordStatus.DND]: "green", // I'm basically always on DND anyway
-  [DiscordStatus.OFFLINE]: "gray",
+  online: "green",
+  idle: "yellow",
+  dnd: "green", // I'm basically always on DND anyway
+  offline: "gray",
 };
 const STATUS_TEXT = {
-  [DiscordStatus.ONLINE]: "Online",
-  [DiscordStatus.IDLE]: "Idle",
-  [DiscordStatus.DND]: "Online", // Again, I'm basically always on DND anyway
-  [DiscordStatus.OFFLINE]: "Offline",
+  online: "Online",
+  idle: "Idle",
+  dnd: "Online", // Again, I'm basically always on DND anyway
+  offline: "Offline",
 };
 
 const d = await fetchLanyardUserData(DISCORD_USER_ID);
-const status = d.discord_status as DiscordStatus;
+const status = d.discord_status;
 ---
 
 <Badge>
