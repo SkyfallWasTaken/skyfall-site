@@ -7,13 +7,14 @@ import Layout from "../layouts/layout.astro";
 import Button from "../components/ui/button.astro";
 import Badge from "../components/ui/badge.astro";
 import OnlineStatus from "../components/home/online-status.astro";
+import BlogPostPreview from "../components/misc/blog-post-preview.astro";
 
 import RustIcon from "../components/home/rust-icon.astro";
 import TsIcon from "../components/home/ts-icon.astro";
 import SvelteIcon from "../components/home/svelte-icon.astro";
 import AstroIcon from "../components/home/astro-icon.astro";
 import TwIcon from "../components/home/tw-icon.astro";
-import { Clock as ClockIcon } from "lucide-astro";
+import { Clock as ClockIcon, ArrowRight as ArrowRightIcon } from "lucide-astro";
 
 import logoImage from "../img/logo.png";
 
@@ -99,24 +100,19 @@ export const prerender = false;
       </div>
     </div>
 
-    <div class="flex flex-col gap-2">
-      <h1 class="font-semibold text-lg">Blog</h1>
+    <div class="flex flex-col gap-2.5">
+      <div class="flex">
+        <h1 class="font-semibold text-lg">Blog</h1>
+        <a
+          href="/posts"
+          class="ml-auto text-subtext0 hover:text-sky transition underline flex gap-1 items-center"
+        >
+          View all
+          <ArrowRightIcon class="w-4 h-4" />
+        </a>
+      </div>
       <ul class="space-y-2 leading-tight flex flex-col gap-2 sm:gap-0">
-        {
-          latestFivePosts.map((post) => (
-            <li class="flex flex-col sm:flex-row gap-1 sm:gap-3">
-              <a
-                href={`/posts/${post.slug}`}
-                class="underline font-medium text-subtext0 hover:text-mauve transition"
-              >
-                {post.data.title}
-              </a>
-              <p class="text-overlay0">
-                {intlFormatDistance(post.data.pubDate, new Date())}
-              </p>
-            </li>
-          ))
-        }
+        {latestFivePosts.map((post) => <BlogPostPreview post={post} />)}
       </ul>
     </div>
   </div>
