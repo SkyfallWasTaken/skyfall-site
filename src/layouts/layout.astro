@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 import Header from "../components/layout/header.astro";
 
 interface Props {
@@ -14,6 +16,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} | Mahad Kalam</title>
+    <ViewTransitions />
   </head>
   <body
     class="bg-base text-text min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-6 sm:py-12 px-6"
