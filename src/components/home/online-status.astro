@@ -6,10 +6,10 @@ import Badge from "../ui/badge.astro";
 import BadgeCircle from "../ui/badge-circle.astro";
 
 const STATUS_COLOURS = {
-  online: "green",
-  idle: "yellow",
-  dnd: "green", // I'm basically always on DND anyway
-  offline: "gray",
+  online: "fill-green",
+  idle: "fill-yellow-200",
+  dnd: "fill-green", // I'm basically always on DND anyway
+  offline: "fill-surface1",
 };
 const STATUS_TEXT = {
   online: "Online",
@@ -23,7 +23,7 @@ const status = d.discord_status;
 ---
 
 <Badge>
-  <BadgeCircle fill={`fill-${STATUS_COLOURS[status]}`} slot="pre" />
+  <BadgeCircle fill={STATUS_COLOURS[status]} slot="pre" />
   <span slot="content">
     {STATUS_TEXT[status]}
   </span>
