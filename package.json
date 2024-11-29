@@ -14,6 +14,7 @@
     "@astrojs/cloudflare": "^11.2.0",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
+    "@sentry/astro": "^8.41.0",
     "astro": "^4.16.16",
     "date-fns": "^4.1.0",
     "lanyard-wrapper": "2.0.1",
