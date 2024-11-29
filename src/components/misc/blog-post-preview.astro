@@ -7,7 +7,7 @@ const { post } = Astro.props as { post: CollectionEntry<"blog"> };
 <li>
   <a href=`/posts/${post.slug}`>
     <article
-      class="flex flex-col p-4 bg-surface0 transition border-surface1 hover:text-subtext1 border rounded-lg shadow-sm"
+      class="flex flex-col p-4 bg-surface0 hover:brightness-[110%] transition border-surface1 hover:text-subtext1 border rounded-lg shadow-sm"
     >
       <small class="flex items-center gap-2">
         {
