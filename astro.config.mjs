@@ -16,7 +16,7 @@ export default defineConfig({
     sitemap(),
     webmanifest({
       name: SITE_TITLE,
-      icon: 'src/imgs/logo.png', // source for favicon & icons
+      icon: 'src/img/logo.png', // source for favicon & icons
 
       short_name: SITE_TITLE,
       description: SITE_DESCRIPTION,
