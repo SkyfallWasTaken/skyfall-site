@@ -19,19 +19,23 @@ const { title, description = SITE_DESCRIPTION, ogImage } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} - {SITE_TITLE}</title>
+    <meta name="description" content={description} />
+
     <meta property="og:site_name" content={SITE_TITLE} />
-    <meta property="description" content={description} />
-    <meta property="og:title" content=`${title}` />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:description" content={description} />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
     <meta
       property="twitter:card"
       content={ogImage ? "summary_large_image" : "summary"}
     />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta property="twitter:image" content={ogImage} />}
+
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <ViewTransitions transition:animate={fade({ duration: "0.2s" })} />
