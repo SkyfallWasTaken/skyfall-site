@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import { fade } from "astro:transitions";
 
 import Header from "../components/layout/header.astro";
 
@@ -25,7 +26,7 @@ const { title, description = DEFAULT_DESCRIPTION } = Astro.props;
     <meta property="og:locale" content="en_US" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <ViewTransitions />
+    <ViewTransitions transition:animate={fade({ duration: "0.2s" })} />
   </head>
   <body
     class="bg-base text-text min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-6 sm:py-12 px-6"
