@@ -15,7 +15,7 @@ import AstroIcon from "../components/home/astro-icon.astro";
 import TwIcon from "../components/home/tw-icon.astro";
 import { Clock as ClockIcon, ArrowRight as ArrowRightIcon } from "lucide-astro";
 
-import logoImage from "../img/logo.png";
+import logoImage from "../assets/img/logo.png";
 
 const quotes = [
   "code whisperer by day, chaos enthusiast by night",
@@ -45,7 +45,7 @@ const initialTime = new Date().toLocaleTimeString("en-GB", {
 const blogCollection = await getCollection("blog");
 
 const posts = blogCollection.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 const latestThreePosts = posts.slice(0, 3);
 
