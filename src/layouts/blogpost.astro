@@ -4,11 +4,13 @@ import type { CollectionEntry } from "astro:content";
 import Layout from "./layout.astro";
 import FormattedDate from "../components/ui/formatted-date.astro";
 
-type Props = CollectionEntry<"blog">["data"];
-const { title, description, pubDate } = Astro.props;
+type Props = CollectionEntry<"blog">["data"] & {
+  ogImage: string;
+};
+const { title, description, pubDate, ogImage } = Astro.props;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} ogImage={ogImage}>
   <div class="mt-10 w-full">
     <div class="text-center">
       <!-- Title, date and description -->

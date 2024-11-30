@@ -4,13 +4,13 @@ import { fade } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 
 import Header from "../components/layout/header.astro";
-
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = SITE_DESCRIPTION } = Astro.props;
+const { title, description = SITE_DESCRIPTION, ogImage } = Astro.props;
 ---
 
 <!doctype html>
@@ -27,6 +27,11 @@ const { title, description = SITE_DESCRIPTION } = Astro.props;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
+    <meta
+      property="twitter:card"
+      content={ogImage ? "summary_large_image" : "summary"}
+    />
+    {ogImage && <meta property="og:image" content={ogImage} />}
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <ViewTransitions transition:animate={fade({ duration: "0.2s" })} />

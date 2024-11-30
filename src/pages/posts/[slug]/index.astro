@@ -15,6 +15,6 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} ogImage=`${Astro.site}/posts/${post.slug}/og`>
   <Content />
 </BlogPost>
