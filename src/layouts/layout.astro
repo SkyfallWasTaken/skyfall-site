@@ -32,7 +32,7 @@ const { title, description = SITE_DESCRIPTION } = Astro.props;
     <ViewTransitions transition:animate={fade({ duration: "0.2s" })} />
   </head>
   <body
-    class="bg-base text-text min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-6 sm:py-12 px-6"
+    class="bg-base bg-dotted-spacing-8 bg-dotted-gray-800 text-text min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-6 sm:py-12 px-6"
   >
     <Header />
     <main><slot /></main>
