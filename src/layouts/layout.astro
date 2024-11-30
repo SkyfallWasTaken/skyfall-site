@@ -18,10 +18,11 @@ const { title, description = SITE_DESCRIPTION } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} • {SITE_TITLE}</title>
+    <title>{title} - {SITE_TITLE}</title>
     <meta property="og:site_name" content={SITE_TITLE} />
     <meta property="description" content={description} />
-    <meta property="og:title" content=`${title} • ${SITE_TITLE}` />
+    <meta property="og:title" content=`${title}` />
+    <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:description" content={description} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
