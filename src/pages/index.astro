@@ -48,7 +48,7 @@ const blogCollection = await getCollection("blog");
 const posts = blogCollection.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-const latestFivePosts = posts.slice(0, 5);
+const latestThreePosts = posts.slice(0, 3);
 
 export const prerender = false;
 ---
@@ -114,7 +114,7 @@ export const prerender = false;
         </a>
       </div>
       <ul class="space-y-2 leading-tight flex flex-col gap-2 sm:gap-0">
-        {latestFivePosts.map((post) => <BlogPostPreview post={post} />)}
+        {latestThreePosts.map((post) => <BlogPostPreview post={post} />)}
       </ul>
     </div>
   </div>
