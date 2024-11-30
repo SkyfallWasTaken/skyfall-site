@@ -1,29 +1,31 @@
 ---
 import { type CollectionEntry } from "astro:content";
 
+import Card from "../ui/card.astro";
+
 const { post } = Astro.props as { post: CollectionEntry<"blog"> };
 ---
 
 <li>
   <a href=`/posts/${post.slug}`>
-    <article
-      class="flex flex-col p-4 bg-surface0 hover:brightness-[110%] transition border-surface1 hover:text-subtext1 border rounded-lg shadow-sm"
-    >
-      <small class="flex items-center gap-2">
-        {
-          post.data.pubDate.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })
-        }
-      </small>
-      <h2 class="text-xl mb-0.5 font-semibold">
-        {post.data.title}
-      </h2>
-      <p class="text-subtext1 text-sm">
-        {post.data.description}
-      </p>
-    </article>
+    <Card>
+      <article>
+        <small class="flex items-center gap-2">
+          {
+            post.data.pubDate.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </small>
+        <h2 class="text-xl mb-0.5 font-semibold">
+          {post.data.title}
+        </h2>
+        <p class="text-subtext1 text-sm">
+          {post.data.description}
+        </p>
+      </article>
+    </Card>
   </a>
 </li>
