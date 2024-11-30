@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "skyfall-site",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -19,7 +19,6 @@
     "date-fns": "^4.1.0",
     "lanyard-wrapper": "2.0.1",
     "lucide-astro": "^0.462.0",
-    "sharp-ico": "^0.1.5",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.7.2"
   },
