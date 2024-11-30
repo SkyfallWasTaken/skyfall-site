@@ -23,5 +23,5 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Run Knip
-        run: bun knip
+      - name: Run checks
+        run: bun check
