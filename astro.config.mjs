@@ -3,8 +3,8 @@ import { defineConfig, envField } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
-import favicons from "astro-favicons";
 import vercel from "@astrojs/vercel/serverless";
+import webmanifest from 'astro-webmanifest';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "./src/constants";
 
@@ -14,11 +14,16 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap(),
-    favicons({
-      masterPicture: "./src/img/logo.png",
-      emitAssets: true,
-      appName: SITE_TITLE,
-      appDescription: SITE_DESCRIPTION,
+    webmanifest({
+      name: SITE_TITLE,
+      icon: 'src/imgs/logo.png', // source for favicon & icons
+
+      short_name: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+      start_url: '/',
+      theme_color: '#cba6f7', // mocha mauve
+      background_color: '#1e1e2e', // mocha base
+      display: 'standalone',
     }),
   ],
 

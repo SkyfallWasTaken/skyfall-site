@@ -18,7 +18,7 @@
     "@astrojs/tailwind": "^5.1.2",
     "@astrojs/vercel": "^7.8.2",
     "astro": "^4.16.16",
-    "astro-favicons": "^2.1.8",
+    "astro-webmanifest": "^1.0.0",
     "date-fns": "^4.1.0",
     "lanyard-wrapper": "2.0.1",
     "lucide-astro": "^0.462.0",
@@ -33,6 +33,8 @@
     "prettier": "^3.4.1"
   },
   "trustedDependencies": [
-    "@sentry/cli"
+    "@sentry/cli",
+    "esbuild",
+    "sharp"
   ]
 }
