@@ -1,4 +1,6 @@
 ---
+import { SITE_TITLE } from "../../constants";
+
 const NAV_ITEMS = [
   { href: "/", text: "Home" },
   { href: "/posts", text: "Blog" },
@@ -11,7 +13,7 @@ const NAV_ITEMS = [
   class="flex gap-2 mb-8 text-subtext0 hover:*:text-subtext1"
   aria-label="Breadcrumb"
 >
-  <a href="/" class="font-semibold">Mahad Kalam</a>
+  <a href="/" class="font-semibold">{SITE_TITLE}</a>
   <ol class="flex ml-auto items-center space-x-2">
     {
       NAV_ITEMS.map((item) => (
