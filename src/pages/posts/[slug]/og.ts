@@ -57,7 +57,7 @@ function inlineTailwind(el: h.JSX.Element): h.JSX.Element {
   );
 }
 
-export async function SVG(component: JSX.Element) {
+export async function SVG(component: h.JSX.Element) {
   return await satori(component, {
     width: 1200,
     height: 630,
@@ -76,7 +76,7 @@ export async function SVG(component: JSX.Element) {
   });
 }
 
-export async function PNG(component: JSX.Element) {
+export async function PNG(component: h.JSX.Element) {
   return await sharp(Buffer.from(await SVG(component)))
     .png()
     .toBuffer();
