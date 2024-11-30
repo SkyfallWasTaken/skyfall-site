@@ -15,7 +15,7 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     favicons({
-      masterPicture: "./src/img/rust.svg",
+      masterPicture: "./src/img/logo.png",
       emitAssets: true,
       appName: SITE_TITLE,
       appDescription: SITE_DESCRIPTION,

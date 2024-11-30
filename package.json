@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "knip": "knip-bun",
+    "format": "prettier --write .",
     "check": "prettier --check . && bun knip && astro check"
   },
   "dependencies": {
