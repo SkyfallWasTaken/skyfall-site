@@ -44,9 +44,9 @@ const initialTime = new Date().toLocaleTimeString("en-GB", {
 
 const blogCollection = await getCollection("blog");
 
-const posts = blogCollection.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = blogCollection
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const latestThreePosts = posts.slice(0, 3);
 
 export const prerender = false;
