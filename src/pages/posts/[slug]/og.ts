@@ -58,7 +58,7 @@ function inlineTailwind(el: h.JSX.Element): h.JSX.Element {
 }
 
 export async function SVG(component: h.JSX.Element) {
-  return await satori(component, {
+  return await satori(component as any, {
     width: 1200,
     height: 630,
     fonts: [
