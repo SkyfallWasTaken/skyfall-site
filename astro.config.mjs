@@ -8,6 +8,8 @@ import webmanifest from "astro-webmanifest";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "./src/constants";
 
+import sentry from "@sentry/astro";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://skyfall.dev",
@@ -25,6 +27,14 @@ export default defineConfig({
       background_color: "#1e1e2e", // mocha base
       display: "standalone",
     }),
+    process.env.SENTRY_AUTH_TOKEN != undefined &&
+      sentry({
+        dsn: process.env.SENTRY_DSN,
+        sourceMapsUploadOptions: {
+          project: process.env.SENTRY_PROJECT_NAME,
+          authToken: process.env.SENTRY_AUTH_TOKEN,
+        },
+      }),
   ],
 
   markdown: {
@@ -49,6 +59,21 @@ export default defineConfig({
           optional: true,
         }),
         UMAMI_WEBSITE_ID: envField.string({
+          context: "client",
+          access: "public",
+          optional: true,
+        }),
+        SENTRY_DSN: envField.string({
+          context: "client",
+          access: "public",
+          optional: true,
+        }),
+        SENTRY_PROJECT_NAME: envField.string({
+          context: "client",
+          access: "public",
+          optional: true,
+        }),
+        SENTRY_AUTH_TOKEN: envField.string({
           context: "client",
           access: "public",
           optional: true,
