@@ -13,10 +13,11 @@ Satori also comes with Tailwind support by default, but there's a catch - it doe
 
 ## Step 1: Dependencies
 
-We'll first need to download the dependencies we need. I'll be using Preact in this tutorial, but React works too!
+We'll first need to download the dependencies we need. I'll be using Preact in this tutorial, but React works too (albeit with a few minor changes in the imports and types)
 
 ```bash
 npm install preact # or `npm install react`
+npm install satori
 ```
 
 We'll also need the `tw-to-css` library, which'll convert our Tailwind classes into a `style` prop that Satori can render.
