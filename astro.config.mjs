@@ -10,12 +10,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "./src/constants";
 
 import sentry from "@sentry/astro";
 
+// FIXME: massive hack, but we can't get content collections inside the config file.
+// we probably need to write a script to generate this list.
+const drafts = [
+  "astro-og-with-satori"
+]
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://skyfall.dev",
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) => {
+        for (const draft of drafts) {
+          if (page.includes(draft)) {
+            return false;
+          }
+        }
+        return true;
+      }
+    }),
     webmanifest({
       name: SITE_TITLE,
       icon: "src/assets/img/favicon.png", // source for favicon & icons
@@ -28,13 +43,13 @@ export default defineConfig({
       display: "standalone",
     }),
     process.env.SENTRY_AUTH_TOKEN != undefined &&
-      sentry({
-        dsn: process.env.SENTRY_DSN,
-        sourceMapsUploadOptions: {
-          project: process.env.SENTRY_PROJECT_NAME,
-          authToken: process.env.SENTRY_AUTH_TOKEN,
-        },
-      }),
+    sentry({
+      dsn: process.env.SENTRY_DSN,
+      sourceMapsUploadOptions: {
+        project: process.env.SENTRY_PROJECT_NAME,
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+      },
+    }),
   ],
 
   markdown: {
