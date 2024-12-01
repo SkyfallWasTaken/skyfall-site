@@ -34,7 +34,7 @@ export default defineConfig({
     }),
     webmanifest({
       name: SITE_TITLE,
-      icon: "src/public/favicon.png", // source for favicon & icons
+      icon: "public/favicon.png", // source for favicon & icons
 
       short_name: SITE_TITLE,
       description: SITE_DESCRIPTION,
