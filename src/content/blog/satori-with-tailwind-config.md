@@ -46,7 +46,7 @@ const { twj } = tailwindToCSS({
 
 Make sure to replace the path above with the path to your Tailwind config!
 
-Now, let's define an `inlineTailwind` function, that'll convert the Tailwind classes into inline styles:
+Now, let's define an `inlineTailwind` function that'll convert the Tailwind classes into inline styles:
 
 ```ts
 function inlineTailwind(el: h.JSX.Element): h.JSX.Element {
