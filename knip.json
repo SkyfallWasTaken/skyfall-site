@@ -1,8 +1,4 @@
 {
-    "ignore": [
-        "sitemap-ext:*"
-    ],
-    "ignoreDependencies": [
-        "sitemap-ext"
-    ]
+  "ignore": ["sitemap-ext:*"],
+  "ignoreDependencies": ["sitemap-ext"]
 }
