@@ -2,6 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import { fade } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
+import { UMAMI_SCRIPT, UMAMI_WEBSITE_ID } from "astro:env/client";
 
 import "@fontsource/fira-code";
 import Header from "../components/layout/header.astro";
@@ -38,6 +39,12 @@ const { title, description = SITE_DESCRIPTION, ogImage } = Astro.props;
     {ogImage && <meta property="twitter:image" content={ogImage} />}
 
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {
+      UMAMI_SCRIPT && UMAMI_WEBSITE_ID && (
+        <script defer src={UMAMI_SCRIPT} data-website-id={UMAMI_WEBSITE_ID} />
+      )
+    }
 
     <ViewTransitions transition:animate={fade({ duration: "0.2s" })} />
   </head>

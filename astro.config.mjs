@@ -43,6 +43,16 @@ export default defineConfig({
           context: "client",
           access: "public",
         }),
+        UMAMI_SCRIPT: envField.string({
+          context: "client",
+          access: "public",
+          optional: true,
+        }),
+        UMAMI_WEBSITE_ID: envField.string({
+          context: "client",
+          access: "public",
+          optional: true,
+        }),
       },
     },
     serverIslands: true,
