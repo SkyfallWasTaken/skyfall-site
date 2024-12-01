@@ -3,11 +3,12 @@ import type { CollectionEntry } from "astro:content";
 
 import Layout from "./layout.astro";
 import FormattedDate from "../components/ui/formatted-date.astro";
+import Card from "../components/ui/card.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
   ogImage: string;
 };
-const { title, description, pubDate, ogImage } = Astro.props;
+const { title, description, pubDate, ogImage, draft } = Astro.props;
 ---
 
 <Layout title={title} description={description} ogImage={ogImage}>
@@ -22,6 +23,19 @@ const { title, description, pubDate, ogImage } = Astro.props;
         <div>
           <FormattedDate date={pubDate} />
         </div>
+        {
+          draft && (
+            <div class="mt-4 text-left max-w-full">
+              <Card border="border-yellow-500" bg="bg-base">
+                <h2 class="text-xl font-bold">This is a draft post</h2>
+                <p class="text-sm">
+                  It may have typos, unfinished sections, or inaccuracies.
+                  Please don't share it until it's been published!
+                </p>
+              </Card>
+            </div>
+          )
+        }
       </div>
     </div>
 
