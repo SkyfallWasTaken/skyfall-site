@@ -4,7 +4,7 @@ import { defineConfig, envField } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@inox-tools/sitemap-ext";
 import webmanifest from "astro-webmanifest";
-import mdx from "@astrojs/mdx"
+import mdx from "@astrojs/mdx";
 
 import vercel from "@astrojs/vercel/serverless";
 
@@ -33,13 +33,13 @@ export default defineConfig({
       display: "standalone",
     }),
     process.env.SENTRY_AUTH_TOKEN != undefined &&
-    sentry({
-      dsn: process.env.SENTRY_DSN,
-      sourceMapsUploadOptions: {
-        project: process.env.SENTRY_PROJECT_NAME,
-        authToken: process.env.SENTRY_AUTH_TOKEN,
-      },
-    }),
+      sentry({
+        dsn: process.env.SENTRY_DSN,
+        sourceMapsUploadOptions: {
+          project: process.env.SENTRY_PROJECT_NAME,
+          authToken: process.env.SENTRY_AUTH_TOKEN,
+        },
+      }),
   ],
 
   markdown: {
