@@ -11,7 +11,7 @@ pubDate: "November 30, 2024 21:00"
 
 Satori also comes with Tailwind support by default, but there's a catch - it doesn't work with your Tailwind config out-of-the-box. In this blog post, I'll be showing you how to get Satori to work with your Tailwind config!
 
-## Step 1: Dependencies
+## Installing Dependencies
 
 We'll first need to download the dependencies we need. I'll be using Preact in this tutorial, but React works too (albeit with a few minor changes in the imports and types)
 
