@@ -8,22 +8,24 @@ import webmanifest from 'astro-webmanifest';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "./src/constants";
 
-import preact from "@astrojs/preact";
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://skyfall.dev",
-  integrations: [tailwind(), sitemap(), webmanifest({
-    name: SITE_TITLE,
-    icon: 'src/assets/img/favicon.png', // source for favicon & icons
+  integrations: [
+    tailwind(),
+    sitemap(),
+    webmanifest({
+      name: SITE_TITLE,
+      icon: 'src/assets/img/favicon.png', // source for favicon & icons
 
-    short_name: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    start_url: '/',
-    theme_color: '#cba6f7', // mocha mauve
-    background_color: '#1e1e2e', // mocha base
-    display: 'standalone',
-  }), preact()],
+      short_name: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+      start_url: '/',
+      theme_color: '#cba6f7', // mocha mauve
+      background_color: '#1e1e2e', // mocha base
+      display: 'standalone',
+    })
+  ],
 
   markdown: {
     shikiConfig: {
