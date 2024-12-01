@@ -41,20 +41,21 @@ export async function getStaticPaths() {
 }
 
 function inlineTailwind(el: h.JSX.Element): h.JSX.Element {
-  const { tw, children, ...props } = el.props;
-  let style: h.JSX.Element["props"]["style"] = {};
+  const { tw, children, style: originalStyle, ...props } = el.props;
 
-  if (tw) {
-    style = twj(tw.split(" "));
-  }
+  // Generate style from the `tw` prop
+  const twStyle = tw ? twj(tw.split(" ")) : {};
 
-  return cloneElement(
-    el,
-    { ...props, style },
-    Children.map(children, (child) =>
-      isValidElement(child) ? inlineTailwind(child) : child,
-    ),
+  // Merge original and generated styles
+  const mergedStyle = { ...originalStyle, ...twStyle };
+
+  // Recursively process children
+  const processedChildren = Children.map(children, (child) =>
+    isValidElement(child) ? inlineTailwind(child as h.JSX.Element) : child,
   );
+
+  // Return cloned element with updated props
+  return cloneElement(el, { ...props, style: mergedStyle }, processedChildren);
 }
 
 export async function SVG(component: h.JSX.Element) {
