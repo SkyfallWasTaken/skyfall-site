@@ -1,0 +1,132 @@
+---
+title: "How to generate OpenGraph images with Astro and Satori"
+description: "Generating OpenGraph images for your Astro site is an easy way to increase click-through rates and make link previews more appealing. Here's how to set them up!"
+tags: ["astro", "opengraph", "satori", "tailwind"]
+pubDate: "December 1, 2024 18:00"
+draft: true
+---
+
+import Card from "../../components/ui/card.astro";
+
+## Introduction
+
+OpenGraph (OG) images are a good way to do stuff. TODO: me
+
+## Installing dependencies
+
+We'll first need to download the dependencies we need. I'll be using Preact in this tutorial, and of course, we'll need to install Satori.
+
+```bash
+npm install preact # or `npm install react`
+npm install satori
+```
+
+If you're going to use Tailwind and want to use the same Tailwind config, you'll also want to use the `tw-to-css` library. I talk more about this in [my blog post on using Satori with your project's Tailwind config.](/posts/satori-with-tailwind-config)
+
+```bash
+npm install tw-to-css
+```
+
+Finally, we'll add the Sharp library, which'll convert Satori's SVG output into a PNG.
+
+```bash
+npm install sharp
+```
+
+If you're using Bun for the above step
+
+## Setting up an `/[slug]/og` endpoint
+
+Assuming that your file structure looks something like this:
+
+```text
+/
+├── src/
+│   ├── blog/
+│   │   └── [slug].astro
+```
+
+You'll want to move the `[slug].astro` file to a new `[slug]` folder, rename it to `index.astro`, then add a new `og.ts` file in that new folder. Now, here's some code you can put in that file:
+
+```ts
+import fs from "fs/promises";
+import satori from "satori";
+import sharp from "sharp";
+import { getCollection } from "astro:content";
+import type { InferGetStaticParamsType } from "astro";
+
+import OpenGraphImage from "path/to/your/og/image/component";
+
+const posts = await getCollection("blog");
+type Params = InferGetStaticParamsType<typeof getStaticPaths>;
+
+export async function GET({ params }: { params: Params }) {
+  const post = posts.find((post) => post.slug === params.slug); // Find the specific post by slug
+  if (!post) {
+    return new Response("Post not found", { status: 404 });
+  }
+
+  const element = OpenGraphImage(post);
+  const png = await PNG(element);
+  return new Response(png, {
+    headers: {
+      "Content-Type": "image/png",
+    },
+  });
+}
+
+export async function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+export async function SVG(component: h.JSX.Element) {
+  return await satori(component as any, {
+    width: 1200,
+    height: 630,
+    fonts: [
+      {
+        name: "Outfit",
+        data: await fs.readFile("./src/assets/fonts/og/Outfit-Regular.ttf"),
+        weight: 400,
+      },
+    ],
+  });
+}
+
+export async function PNG(component: h.JSX.Element) {
+  return await sharp(Buffer.from(await SVG(component)))
+    .png()
+    .toBuffer();
+}
+```
+
+<div class="not-prose">
+  <Card border="border-yellow-500" bg="bg-base">
+    If your route param isn't called `slug`, you'll need to change the
+    references to `slug` to match your route param.
+  </Card>
+</div>
+
+We're setting the image size to `1200x630`, which is the recommended size for OG images, and ensures your images look good on most platforms, like Twitter/X and Discord.
+
+You probably also noticed the `fonts` array we're passing to `satori`, which, well, defines the fonts you're going to be using in your image! I've used the [Outfit](https://fonts.google.com/specimen/Outfit) font here, but feel free to pick your own. **Note that the relative paths are relative to the root directory of your project.**
+
+## Creating an OG image component
+
+Now, let's create the `OpenGraphImage` component that we're using in the `og.ts` file. This component will be responsible for rendering the actual content of the OG image. Here's an example:
+
+```tsx
+import { type CollectionEntry } from "astro:content";
+
+export default function (props: CollectionEntry<"blog">) {
+  return (
+    <div tw="flex flex-col w-full h-full p-12 items-center text-center justify-center text-white bg-indigo-500">
+      <div tw="flex font-bold text-8xl mb-4">{props.data.title}</div>
+      <div tw="flex text-5xl mb-12">{props.data.description}</div>
+    </div>
+  );
+}
+```

@@ -3,8 +3,10 @@ import { defineConfig, envField } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
-import vercel from "@astrojs/vercel/serverless";
 import webmanifest from "astro-webmanifest";
+import mdx from "@astrojs/mdx"
+
+import vercel from "@astrojs/vercel/serverless";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "./src/constants";
 
@@ -12,15 +14,14 @@ import sentry from "@sentry/astro";
 
 // FIXME: massive hack, but we can't get content collections inside the config file.
 // we probably need to write a script to generate this list.
-const drafts = [
-  "astro-og-with-satori"
-]
+const drafts = ["astro-og-with-satori"];
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://skyfall.dev",
   integrations: [
     tailwind(),
+    mdx(),
     sitemap({
       filter: (page) => {
         for (const draft of drafts) {
@@ -29,7 +30,7 @@ export default defineConfig({
           }
         }
         return true;
-      }
+      },
     }),
     webmanifest({
       name: SITE_TITLE,
