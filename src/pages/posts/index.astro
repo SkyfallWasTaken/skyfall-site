@@ -13,7 +13,11 @@ const blogCollection = await getCollection("blog");
   </div>
   <div>
     <ol>
-      {blogCollection.filter((post) => !post.data.draft).map((post) => <BlogPostPreview post={post} />)}
+      {
+        blogCollection
+          .filter((post) => !post.data.draft)
+          .map((post) => <BlogPostPreview post={post} />)
+      }
     </ol>
   </div>
 </Layout>

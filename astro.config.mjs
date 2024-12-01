@@ -4,7 +4,7 @@ import { defineConfig, envField } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel/serverless";
-import webmanifest from 'astro-webmanifest';
+import webmanifest from "astro-webmanifest";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "./src/constants";
 
@@ -16,15 +16,15 @@ export default defineConfig({
     sitemap(),
     webmanifest({
       name: SITE_TITLE,
-      icon: 'src/assets/img/favicon.png', // source for favicon & icons
+      icon: "src/assets/img/favicon.png", // source for favicon & icons
 
       short_name: SITE_TITLE,
       description: SITE_DESCRIPTION,
-      start_url: '/',
-      theme_color: '#cba6f7', // mocha mauve
-      background_color: '#1e1e2e', // mocha base
-      display: 'standalone',
-    })
+      start_url: "/",
+      theme_color: "#cba6f7", // mocha mauve
+      background_color: "#1e1e2e", // mocha base
+      display: "standalone",
+    }),
   ],
 
   markdown: {

@@ -39,8 +39,7 @@ We then need to get a `twj` function (Tailwind to JSON); we'll use it to convert
 
 ```ts
 const { twj } = tailwindToCSS({
-  config: (await import("../tailwind.config.mjs"))
-    .default as TailwindConfig,
+  config: (await import("../tailwind.config.mjs")).default as TailwindConfig,
 });
 ```
 
@@ -68,11 +67,7 @@ And you're done! Here's an example of how you can use this function:
 
 ```tsx
 function Component() {
-  return (
-    <div tw="flex bg-base">
-      Hi there! 👋
-    </div>
-  )
+  return <div tw="flex bg-base">Hi there! 👋</div>;
 }
 
 const element = Component();

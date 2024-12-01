@@ -1,6 +1,6 @@
 import catppuccin from "@catppuccin/tailwindcss";
 import typography from "@tailwindcss/typography";
-import defaultTheme from 'tailwindcss/defaultTheme'
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const accent = "text";
 const linkColor = "sky";
@@ -11,7 +11,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
+        mono: ["Fira Code", ...defaultTheme.fontFamily.mono],
       },
       typography: (theme) => ({
         DEFAULT: {
