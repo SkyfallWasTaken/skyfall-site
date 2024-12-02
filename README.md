@@ -6,7 +6,7 @@
 
 OG images are automatically generated for blog posts!
 
-![image](https://cloud-750cs4vr1-hack-club-bot.vercel.app/0image.png)
+<img src="https://cloud-qkxfegiat-hack-club-bot.vercel.app/0image.png" alt="og image" style="border-radius: 10px;" />
 
 ### Discord status & local time
 
