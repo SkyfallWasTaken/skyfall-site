@@ -1,4 +1,4 @@
-name: Run Knip
+name: Run checks
 
 on:
   push:
