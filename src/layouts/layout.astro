@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { fade } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 import { UMAMI_SCRIPT, UMAMI_WEBSITE_ID } from "astro:env/client";
@@ -51,7 +51,7 @@ const { title, description = SITE_DESCRIPTION, ogImage } = Astro.props;
       )
     }
 
-    <ViewTransitions transition:animate={fade({ duration: "0.2s" })} />
+    <ClientRouter transition:animate={fade({ duration: "0.2s" })} />
   </head>
   <body
     class="bg-base bg-dotted-spacing-8 bg-dotted-gray-800 text-text min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-6 sm:py-12 px-6"

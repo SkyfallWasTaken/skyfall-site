@@ -18,7 +18,7 @@ const { twj } = tailwindToCSS({
 type Params = InferGetStaticParamsType<typeof getStaticPaths>;
 
 export async function GET({ params }: { params: Params }) {
-  const post = posts.find((post) => post.slug === params.slug); // Find the specific post by slug
+  const post = posts.find((post) => post.id === params.id); // Find the specific post by ID
   if (!post) {
     return new Response("Post not found", { status: 404 });
   }
@@ -35,7 +35,7 @@ export async function GET({ params }: { params: Params }) {
 
 export async function getStaticPaths() {
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { id: post.id },
     props: post,
   }));
 }

@@ -6,7 +6,7 @@ import sitemap from "@inox-tools/sitemap-ext";
 import webmanifest from "astro-webmanifest";
 import mdx from "@astrojs/mdx";
 
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "./src/constants";
 
@@ -33,13 +33,13 @@ export default defineConfig({
       display: "standalone",
     }),
     process.env.SENTRY_AUTH_TOKEN != undefined &&
-      sentry({
-        dsn: process.env.SENTRY_DSN,
-        sourceMapsUploadOptions: {
-          project: process.env.SENTRY_PROJECT_NAME,
-          authToken: process.env.SENTRY_AUTH_TOKEN,
-        },
-      }),
+    sentry({
+      dsn: process.env.SENTRY_DSN,
+      sourceMapsUploadOptions: {
+        project: process.env.SENTRY_PROJECT_NAME,
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+      },
+    }),
   ],
 
   markdown: {
@@ -51,43 +51,39 @@ export default defineConfig({
     },
   },
 
-  experimental: {
-    env: {
-      schema: {
-        DISCORD_USER_ID: envField.string({
-          context: "client",
-          access: "public",
-        }),
-        UMAMI_SCRIPT: envField.string({
-          context: "client",
-          access: "public",
-          optional: true,
-        }),
-        UMAMI_WEBSITE_ID: envField.string({
-          context: "client",
-          access: "public",
-          optional: true,
-        }),
-        SENTRY_DSN: envField.string({
-          context: "client",
-          access: "public",
-          optional: true,
-        }),
-        SENTRY_PROJECT_NAME: envField.string({
-          context: "client",
-          access: "public",
-          optional: true,
-        }),
-        SENTRY_AUTH_TOKEN: envField.string({
-          context: "client",
-          access: "public",
-          optional: true,
-        }),
-      },
+  env: {
+    schema: {
+      DISCORD_USER_ID: envField.string({
+        context: "client",
+        access: "public",
+      }),
+      UMAMI_SCRIPT: envField.string({
+        context: "client",
+        access: "public",
+        optional: true,
+      }),
+      UMAMI_WEBSITE_ID: envField.string({
+        context: "client",
+        access: "public",
+        optional: true,
+      }),
+      SENTRY_DSN: envField.string({
+        context: "client",
+        access: "public",
+        optional: true,
+      }),
+      SENTRY_PROJECT_NAME: envField.string({
+        context: "client",
+        access: "public",
+        optional: true,
+      }),
+      SENTRY_AUTH_TOKEN: envField.string({
+        context: "client",
+        access: "public",
+        optional: true,
+      }),
     },
-    serverIslands: true,
   },
 
-  output: "hybrid",
   adapter: vercel(),
 });
