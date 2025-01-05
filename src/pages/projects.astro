@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/layout.astro";
+import ProjectGrid from "@components/misc/project-grid.astro";
+
+const projects = await getCollection("projects");
+---
+
+<Layout title="Projects">
+  <div class="prose mt-10 mb-6">
+    <h1>Projects</h1>
+  </div>
+  <ProjectGrid projects={projects} />
+</Layout>

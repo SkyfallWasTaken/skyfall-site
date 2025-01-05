@@ -7,20 +7,23 @@ const { project } = Astro.props as { project: CollectionEntry<"projects"> };
 const image = project.data.smallTileImage || project.data.mainImage;
 ---
 
-<Card>
-  <a href={`/projects/${project.id}`} class="group block">
-    <div class="relative aspect-video overflow-hidden rounded-lg mb-4">
-      <Image
-        src={image}
-        alt={project.data.title}
-        class="object-cover w-full h-full duration-300 group-hover:scale-105"
-      />
-    </div>
-    <div class="space-y-1">
-      <h3 class="text-xl font-semibold tracking-tight">
-        {project.data.title}
-      </h3>
-      <p>{project.data.tagline}</p>
-    </div>
-  </a>
-</Card>
+<li class="flex">
+  <Card>
+    <!-- FIXME: Add link -->
+    <a href="#" class="group block leading-tight">
+      <div class="relative aspect-video overflow-hidden rounded-lg mb-4">
+        <Image
+          src={image}
+          alt={project.data.title}
+          class="object-cover w-full h-full duration-300 group-hover:scale-105"
+        />
+      </div>
+      <div class="space-y-1">
+        <h3 class="text-xl font-semibold tracking-tight">
+          {project.data.title}
+        </h3>
+        <p>{project.data.tagline}</p>
+      </div>
+    </a>
+  </Card>
+</li>
