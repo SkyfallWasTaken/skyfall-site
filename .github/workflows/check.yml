@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  run-knip:
+  check:
     runs-on: ubuntu-latest
 
     steps:
