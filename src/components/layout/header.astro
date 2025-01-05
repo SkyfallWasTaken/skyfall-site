@@ -10,23 +10,114 @@ const NAV_ITEMS = [
 ];
 ---
 
-<nav
-  class="flex gap-2 mb-8 text-subtext0 hover:*:text-subtext1"
-  aria-label="Main navigation"
->
-  <a href="/" class="font-semibold">{SITE_TITLE}</a>
-  <ol class="flex ml-auto items-center space-x-2">
-    {
-      NAV_ITEMS.map((item) => (
-        <li class="*:underline *:underline-offset-[3px] *:decoration-white/30 breadcrumb-item">
-          <a href={item.href} class="text-subtext0 hover:text-subtext1">
-            {item.text}
-          </a>
-          <li class="separator select-none last:hidden" aria-hidden="true">
-            /
+<nav class="relative mb-8" aria-label="Main navigation">
+  <div class="flex items-center justify-between">
+    <a
+      href="/"
+      class="font-semibold text-subtext0 hover:text-subtext1 transition"
+      >{SITE_TITLE}</a
+    >
+
+    <button
+      id="menu-toggle"
+      class="md:hidden p-2 text-subtext0 hover:text-subtext1 transition rounded-md hover:bg-surface0/50"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <!-- Temporarily not using Lucide, because of an Astro bug which MASSIVELY increases dev/build times. -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <ol
+      id="nav-items"
+      class="md:flex hidden absolute md:relative top-full left-0 right-0 md:ml-auto
+             items-center bg-base/95 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none
+             flex-col md:flex-row gap-3 md:gap-2 p-4 md:p-0 text-subtext0
+             border-b border-surface0 md:border-none z-50"
+      data-showing="false"
+    >
+      {
+        NAV_ITEMS.map((item, index) => (
+          <li class="*:underline *:underline-offset-[3px] *:decoration-white/30 w-full md:w-auto text-center md:text-left">
+            <a
+              href={item.href}
+              class="hover:text-subtext1 transition inline-flex items-center justify-center md:justify-start gap-2"
+            >
+              {item.text}
+            </a>
+            {index < NAV_ITEMS.length - 1 && (
+              <span
+                class="md:inline hidden mx-2 select-none text-subtext0/75"
+                aria-hidden="true"
+              >
+                /
+              </span>
+            )}
           </li>
-        </li>
-      ))
-    }
-  </ol>
+        ))
+      }
+    </ol>
+  </div>
 </nav>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navItems = document.getElementById("nav-items");
+
+  if (menuToggle && navItems) {
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", (!isExpanded).toString());
+
+      if (!isExpanded) {
+        // Show menu
+        navItems.classList.remove("hidden");
+        navItems.classList.add("animate-slide-down");
+        navItems.classList.remove("animate-slide-up");
+        navItems.dataset.showing = "true";
+      } else {
+        // Hide menu
+        navItems.classList.add("animate-slide-up");
+        navItems.classList.remove("animate-slide-down");
+        navItems.dataset.showing = "false";
+        // Wait for animation to finish before hiding
+        setTimeout(() => {
+          if (navItems.dataset.showing === "false") {
+            navItems.classList.add("hidden");
+          }
+        }, 150);
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (
+        !menuToggle.contains(e.target as Node) &&
+        !navItems.contains(e.target as Node) &&
+        navItems.dataset.showing === "true"
+      ) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        navItems.classList.add("animate-slide-up");
+        navItems.classList.remove("animate-slide-down");
+        navItems.dataset.showing = "false";
+        setTimeout(() => {
+          if (navItems.dataset.showing === "false") {
+            navItems.classList.add("hidden");
+          }
+        }, 150);
+      }
+    });
+  }
+</script>
