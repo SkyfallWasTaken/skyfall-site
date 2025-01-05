@@ -4,7 +4,8 @@ import { getCollection } from "astro:content";
 
 import Layout from "@layouts/layout.astro";
 import Button from "@components/ui/button.astro";
-import Badge from "@components/ui/badge.astro";
+import Chip from "@components/ui/chip.astro";
+import ChipCircle from "@components/ui/chip-circle.astro";
 import OnlineStatus from "@components/home/online-status.astro";
 import BlogPostPreview from "@components/misc/blog-post-preview.astro";
 import ProjectGrid from "@components/misc/project-grid.astro";
@@ -53,7 +54,7 @@ const posts = blogCollection
 const latestThreePosts = posts.slice(0, 3);
 
 const pinnedProjects = projectsCollection.filter(
-  (project) => project.data.pinned,
+  (project) => project.data.pinned
 );
 
 export const prerender = false;
@@ -82,12 +83,16 @@ export const prerender = false;
           </div>
         </div>
         <div class="flex w-fit gap-2 mb-4">
-          <OnlineStatus />
-          <Badge>
-            <!--             <ClockIcon class="w-3.5 h-3.5" slot="pre" />
- -->
+          <OnlineStatus server:defer>
+            <Chip slot="fallback">
+              <ChipCircle fill="fill-green" slot="pre" />
+              <span slot="content">Online</span>
+            </Chip>
+          </OnlineStatus>
+          <Chip>
+            <!-- <ClockIcon class="w-3.5 h-3.5" slot="pre" /> -->
             <span slot="content" id="current-time">{initialTime}</span>
-          </Badge>
+          </Chip>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3">
@@ -117,8 +122,7 @@ export const prerender = false;
           class="ml-auto text-subtext0 hover:text-sky transition underline flex gap-1 items-center"
         >
           View all
-          <!--           <ArrowRightIcon class="w-4 h-4" />
- -->
+          <!-- <ArrowRightIcon class="w-4 h-4" /> -->
         </a>
       </div>
       <ProjectGrid projects={pinnedProjects} />
@@ -132,8 +136,7 @@ export const prerender = false;
           class="ml-auto text-subtext0 hover:text-sky transition underline flex gap-1 items-center"
         >
           View all
-          <!--           <ArrowRightIcon class="w-4 h-4" />
- -->
+          <!--<ArrowRightIcon class="w-4 h-4" /> -->
         </a>
       </div>
       <ul class="space-y-2 leading-tight flex flex-col gap-2 sm:gap-0">

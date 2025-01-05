@@ -2,8 +2,8 @@
 import { DISCORD_USER_ID } from "astro:env/client";
 import { fetchUserData as fetchLanyardUserData } from "lanyard-wrapper";
 
-import Badge from "../ui/badge.astro";
-import BadgeCircle from "../ui/badge-circle.astro";
+import Chip from "../ui/chip.astro";
+import ChipCircle from "../ui/chip-circle.astro";
 
 const STATUS_COLOURS = {
   online: "fill-green",
@@ -22,9 +22,9 @@ const d = await fetchLanyardUserData(DISCORD_USER_ID);
 const status = d.discord_status;
 ---
 
-<Badge>
-  <BadgeCircle fill={STATUS_COLOURS[status]} slot="pre" />
+<Chip>
+  <ChipCircle fill={STATUS_COLOURS[status]} slot="pre" />
   <span slot="content">
     {STATUS_TEXT[status]}
   </span>
-</Badge>
+</Chip>
