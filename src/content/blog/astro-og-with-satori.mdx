@@ -8,14 +8,23 @@ draft: true
 
 import Card from "@components/ui/card.astro";
 
-## Introduction
+When you share a link on social media, you want it to stand out. That's where OpenGraph (OG) images come in - they're
+the eye-catching previews that automatically appear when your content is shared on platforms like Twitter/X, Facebook,
+or Discord.
 
-OpenGraph (OG) images are a great way to increase click-through rates and make link previews more
-appealing - on average, **posts with Open Graph images get 2.3x more clicks than those without.**
+These aren't just pretty decorations, however - they're incredibly powerful for boosting engagement. Studies have shown that **content with
+custom OpenGraph images attracts 2.3x more clicks** compared to plain links, making them a great way to increase
+engagement and drive traffic to your site.
 
-In this post, I'll be showing you how to generate OpenGraph images for your Astro site using **Satori,**
-an easy-to-use library that lets you generate images using React or Preact, making it super easy to
-reap the benefits of OG images.
+![Twitter/X post with the OG image](@assets/posts/astro-og-with-satori/og-example.png)
+
+But generating these images manually can be tedious, especially for sites with lots of content.
+In this post, I'll show you how to automatically create beautiful OpenGraph images for your Astro site using Satori,
+a library that makes it easy to generate images using React or Preact components. By the end of this tutorial, you'll have:
+
+- Automatic OG image generation for all your blog posts
+- A reusable template that maintains your brand identity
+- Better-looking link previews across all social platforms
 
 ## Installing dependencies
 
@@ -163,7 +172,7 @@ and ensures your images look good on most platforms, like Twitter/X, Facebook, a
 
 You probably also noticed the `fonts` array we're passing to `satori`, which, well,
 defines the fonts you're going to be using in your image! I've used the [Outfit](https://fonts.google.com/specimen/Outfit)
-font here, but feel free to pick your own. **Note that the relative paths are relative
+font here, but feel free to pick your own from places like [Google Fonts.](https://fonts.google.com) **Note that the relative paths are relative
 to the root directory of your project.**
 
 <div class="not-prose">

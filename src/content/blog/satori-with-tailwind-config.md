@@ -5,13 +5,11 @@ tags: ["satori", "tailwind"]
 pubDate: "November 30, 2024 21:00"
 ---
 
-## Introduction
-
 [Satori](https://github.com/vercel/satori) is an easy to use library that lets you generate an SVG file using React (or Preact)! In my opinion, it's _the_ nicest way to generate images.
 
 Satori also comes with Tailwind support by default, but there's a catch - it doesn't work with your Tailwind config out-of-the-box. In this blog post, I'll be showing you how to get Satori to work with your Tailwind config!
 
-## Installing Dependencies
+## Installing dependencies
 
 We'll first need to download the dependencies we need. I'll be using Preact in this tutorial, but React works too (albeit with a few minor changes in the imports and types)
 
