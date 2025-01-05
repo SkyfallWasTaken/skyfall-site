@@ -11,8 +11,7 @@ import { Children } from "preact/compat";
 
 const posts = await getCollection("blog");
 const { twj } = tailwindToCSS({
-  config: (await import("@/../tailwind.config.mjs"))
-    .default as TailwindConfig,
+  config: (await import("@/../tailwind.config.mjs")).default as TailwindConfig,
 });
 
 type Params = InferGetStaticParamsType<typeof getStaticPaths>;
