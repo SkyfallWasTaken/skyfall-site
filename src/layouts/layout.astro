@@ -1,11 +1,11 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import { fade } from "astro:transitions";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/constants";
 import { UMAMI_SCRIPT, UMAMI_WEBSITE_ID } from "astro:env/client";
 
 import "@fontsource/fira-code";
-import Header from "../components/layout/header.astro";
+import Header from "@components/layout/header.astro";
 interface Props {
   title: string;
   description?: string;

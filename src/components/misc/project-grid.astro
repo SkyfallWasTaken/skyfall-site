@@ -1,0 +1,10 @@
+---
+import { type CollectionEntry } from "astro:content";
+import ProjectPreview from "./project-preview.astro";
+
+const { projects } = Astro.props as { projects: CollectionEntry<"projects">[] };
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {projects.map((project) => <ProjectPreview project={project} />)}
+</div>

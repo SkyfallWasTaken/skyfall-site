@@ -4,14 +4,14 @@ import sharp from "sharp";
 import { getCollection } from "astro:content";
 import type { InferGetStaticParamsType } from "astro";
 
-import OpenGraphImage from "../../../components/og/image";
+import OpenGraphImage from "@components/og/image";
 import { tailwindToCSS, type TailwindConfig } from "tw-to-css";
 import { cloneElement, isValidElement, type h } from "preact";
 import { Children } from "preact/compat";
 
 const posts = await getCollection("blog");
 const { twj } = tailwindToCSS({
-  config: (await import("../../../../tailwind.config.mjs"))
+  config: (await import("@/../tailwind.config.mjs"))
     .default as TailwindConfig,
 });
 

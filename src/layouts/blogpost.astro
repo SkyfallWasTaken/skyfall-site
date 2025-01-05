@@ -2,8 +2,8 @@
 import type { CollectionEntry } from "astro:content";
 
 import Layout from "./layout.astro";
-import FormattedDate from "../components/ui/formatted-date.astro";
-import Card from "../components/ui/card.astro";
+import FormattedDate from "@components/ui/formatted-date.astro";
+import Card from "@components/ui/card.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
   ogImage: string;

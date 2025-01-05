@@ -7,10 +7,9 @@ import webmanifest from "astro-webmanifest";
 import mdx from "@astrojs/mdx";
 
 import vercel from "@astrojs/vercel";
+import sentry from "@sentry/astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "./src/constants";
-
-import sentry from "@sentry/astro";
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,14 +31,13 @@ export default defineConfig({
       background_color: "#1e1e2e", // mocha base
       display: "standalone",
     }),
-    process.env.SENTRY_AUTH_TOKEN != undefined &&
-      sentry({
-        dsn: process.env.SENTRY_DSN,
-        sourceMapsUploadOptions: {
-          project: process.env.SENTRY_PROJECT_NAME,
-          authToken: process.env.SENTRY_AUTH_TOKEN,
-        },
-      }),
+    process.env.SENTRY_AUTH_TOKEN != undefined && sentry({
+      dsn: process.env.SENTRY_DSN,
+      sourceMapsUploadOptions: {
+        project: process.env.SENTRY_PROJECT_NAME,
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+      },
+    }),
   ],
 
   markdown: {

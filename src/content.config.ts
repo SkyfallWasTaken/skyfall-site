@@ -3,12 +3,12 @@ import { defineCollection, z } from "astro:content";
 
 const blogCollection = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
     tags: z.array(z.string()),
-    image: z.string().optional(),
+    image: image().optional(),
     draft: z.boolean().default(false),
   }),
 });
@@ -17,12 +17,12 @@ const projectsCollection = defineCollection({
     pattern: "**/[^_]*.{md,mdx}",
     base: "./src/content/projects",
   }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
-    description: z.string(),
-    pubDate: z.coerce.date(),
-    tags: z.array(z.string()),
-    image: z.string().optional(),
+    tagline: z.string(),
+    mainImage: image(),
+    smallTileImage: image().optional(),
+    pinned: z.boolean().default(false)
   }),
 });
 

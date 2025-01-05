@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import sitemap from "sitemap-ext:config";
 
-import BlogPost from "../../../layouts/blogpost.astro";
+import BlogPost from "@layouts/blogpost.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -20,7 +20,7 @@ sitemap(async ({ removeFromSitemap }) => {
       .filter((post) => post.data.draft)
       .map((post) => ({
         id: post.id,
-      })),
+      }))
   );
 });
 

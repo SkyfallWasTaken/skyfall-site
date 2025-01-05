@@ -2,20 +2,22 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import Layout from "../layouts/layout.astro";
-import Button from "../components/ui/button.astro";
-import Badge from "../components/ui/badge.astro";
-import OnlineStatus from "../components/home/online-status.astro";
-import BlogPostPreview from "../components/misc/blog-post-preview.astro";
+import Layout from "@layouts/layout.astro";
+import Button from "@components/ui/button.astro";
+import Badge from "@components/ui/badge.astro";
+import OnlineStatus from "@components/home/online-status.astro";
+import BlogPostPreview from "@components/misc/blog-post-preview.astro";
+import ProjectGrid from "@components/misc/project-grid.astro";
 
-import RustIcon from "../components/home/rust-icon.astro";
-import TsIcon from "../components/home/ts-icon.astro";
-import SvelteIcon from "../components/home/svelte-icon.astro";
-import AstroIcon from "../components/home/astro-icon.astro";
-import TwIcon from "../components/home/tw-icon.astro";
-import { Clock as ClockIcon, ArrowRight as ArrowRightIcon } from "lucide-astro";
-
-import logoImage from "../assets/img/logo.png";
+import RustIcon from "@components/home/rust-icon.astro";
+import TsIcon from "@components/home/ts-icon.astro";
+import SvelteIcon from "@components/home/svelte-icon.astro";
+import AstroIcon from "@components/home/astro-icon.astro";
+import TwIcon from "@components/home/tw-icon.astro";
+// Astro icon libraries massively increase compile times for some reason.
+// See https://github.com/withastro/astro/issues/12793 for more details.
+/* import { Clock as ClockIcon, ArrowRight as ArrowRightIcon } from "lucide-astro"; */
+import logoImage from "@assets/img/logo.png";
 
 const quotes = [
   "code whisperer by day, chaos enthusiast by night",
@@ -43,11 +45,14 @@ const initialTime = new Date().toLocaleTimeString("en-GB", {
 });
 
 const blogCollection = await getCollection("blog");
+const projectsCollection = await getCollection("projects");
 
 const posts = blogCollection
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const latestThreePosts = posts.slice(0, 3);
+
+const pinnedProjects = projectsCollection.filter((project) => project.data.pinned);
 
 export const prerender = false;
 ---
@@ -77,7 +82,8 @@ export const prerender = false;
         <div class="flex w-fit gap-2 mb-4">
           <OnlineStatus />
           <Badge>
-            <ClockIcon class="w-3.5 h-3.5" slot="pre" />
+            <!--             <ClockIcon class="w-3.5 h-3.5" slot="pre" />
+ -->
             <span slot="content" id="current-time">{initialTime}</span>
           </Badge>
         </div>
@@ -109,11 +115,29 @@ export const prerender = false;
           class="ml-auto text-subtext0 hover:text-sky transition underline flex gap-1 items-center"
         >
           View all
-          <ArrowRightIcon class="w-4 h-4" />
+          <!--           <ArrowRightIcon class="w-4 h-4" />
+ -->
         </a>
       </div>
       <ul class="space-y-2 leading-tight flex flex-col gap-2 sm:gap-0">
         {latestThreePosts.map((post) => <BlogPostPreview post={post} />)}
+      </ul>
+    </div>
+
+    <div class="flex flex-col gap-2.5">
+      <div class="flex">
+        <h2 class="font-semibold text-lg">Projects</h2>
+        <a
+          href="/posts"
+          class="ml-auto text-subtext0 hover:text-sky transition underline flex gap-1 items-center"
+        >
+          View all
+          <!--           <ArrowRightIcon class="w-4 h-4" />
+ -->
+        </a>
+      </div>
+      <ul class="space-y-2 leading-tight flex flex-col gap-2 sm:gap-0">
+        <ProjectGrid projects={pinnedProjects} />
       </ul>
     </div>
   </div>
