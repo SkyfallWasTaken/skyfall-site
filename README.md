@@ -23,7 +23,7 @@ My site has a blogpost feature, powered by Astro Content Collections.
 ## Development
 
 ```bash
-echo "DISCORD_USER_ID_GOES_HERE" > .env
+echo "DISCORD_USER_ID=DISCORD_USER_ID_GOES_HERE" > .env
 bun install
 bun dev
 ```
