@@ -36,6 +36,7 @@
   "devDependencies": {
     "@catppuccin/tailwindcss": "^0.1.6",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^22.10.5",
     "knip": "^5.41.1",
     "prettier": "^3.4.2"
   },
