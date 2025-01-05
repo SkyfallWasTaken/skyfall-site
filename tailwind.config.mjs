@@ -16,6 +16,9 @@ export default {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
+
             "--tw-prose-body": theme("colors.text.DEFAULT"),
             "--tw-prose-headings": theme(`colors.${accent}.DEFAULT`),
             "--tw-prose-lead": theme("colors.text.DEFAULT"),
