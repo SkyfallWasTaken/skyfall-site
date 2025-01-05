@@ -218,13 +218,11 @@ root `Layout`.
 import type { CollectionEntry } from "astro:content";
 
 import Layout from "./layout.astro";
-import FormattedDate from "@components/ui/formatted-date.astro";
-import Card from "@components/ui/card.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
   ogImage: string;
 };
-const { title, description, pubDate, ogImage, draft } = Astro.props;
+const { title, description, ogImage } = Astro.props;
 ---
 
 <Layout title={title} description={description} ogImage={ogImage}>
@@ -249,7 +247,7 @@ interface Props {
   ogImage?: string;
 }
 
-const { title, description = SITE_DESCRIPTION, ogImage } = Astro.props;
+const { title, description, ogImage } = Astro.props;
 ---
 
 <!doctype html>
