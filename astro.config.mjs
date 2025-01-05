@@ -32,13 +32,13 @@ export default defineConfig({
       display: "standalone",
     }),
     process.env.SENTRY_AUTH_TOKEN != undefined &&
-      sentry({
-        dsn: process.env.SENTRY_DSN,
-        sourceMapsUploadOptions: {
-          project: process.env.SENTRY_PROJECT_NAME,
-          authToken: process.env.SENTRY_AUTH_TOKEN,
-        },
-      }),
+    sentry({
+      dsn: process.env.SENTRY_DSN,
+      sourceMapsUploadOptions: {
+        project: process.env.SENTRY_PROJECT_NAME,
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+      },
+    }),
   ],
 
   markdown: {
@@ -77,8 +77,8 @@ export default defineConfig({
         optional: true,
       }),
       SENTRY_AUTH_TOKEN: envField.string({
-        context: "client",
-        access: "public",
+        context: "server",
+        access: "secret",
         optional: true,
       }),
     },
