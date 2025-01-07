@@ -54,10 +54,8 @@ const posts = blogCollection
 const latestThreePosts = posts.slice(0, 3);
 
 const pinnedProjects = projectsCollection.filter(
-  (project) => project.data.pinned,
+  (project) => project.data.pinned
 );
-
-export const prerender = false;
 ---
 
 <Layout title="Home">
@@ -83,12 +81,12 @@ export const prerender = false;
           </div>
         </div>
         <div class="flex w-fit gap-2 mb-4">
-          <OnlineStatus server:defer>
+          <!-- <OnlineStatus server:defer>
             <Chip slot="fallback">
               <ChipCircle fill="fill-green" slot="pre" />
               <span slot="content">Online</span>
             </Chip>
-          </OnlineStatus>
+          </OnlineStatus> -->
           <Chip>
             <!-- <ClockIcon class="w-3.5 h-3.5" slot="pre" /> -->
             <span slot="content" id="current-time">{initialTime}</span>
