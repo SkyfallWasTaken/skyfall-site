@@ -5,8 +5,6 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/layout.astro";
 import Button from "@components/ui/button.astro";
 import Chip from "@components/ui/chip.astro";
-import ChipCircle from "@components/ui/chip-circle.astro";
-import OnlineStatus from "@components/home/online-status.astro";
 import BlogPostPreview from "@components/misc/blog-post-preview.astro";
 import ProjectGrid from "@components/misc/project-grid.astro";
 
@@ -19,6 +17,8 @@ import TwIcon from "@components/home/tw-icon.astro";
 // See https://github.com/withastro/astro/issues/12793 for more details.
 /* import { Clock as ClockIcon, ArrowRight as ArrowRightIcon } from "lucide-astro"; */
 import logoImage from "@assets/img/logo.png";
+
+import { getTimeNow } from "@/util";
 
 const quotes = [
   "code whisperer by day, chaos enthusiast by night",
@@ -38,12 +38,7 @@ const quotes = [
   "aye aye cap'n!",
 ];
 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-const initialTime = new Date().toLocaleTimeString("en-GB", {
-  timeZone: "Europe/London",
-  hour12: true,
-  hour: "numeric",
-  minute: "numeric",
-});
+const initialTime = getTimeNow();
 
 const blogCollection = await getCollection("blog");
 const projectsCollection = await getCollection("projects");
@@ -145,15 +140,12 @@ const pinnedProjects = projectsCollection.filter(
 </Layout>
 
 <script>
+  import { getTimeNow } from "@/util";
+
   const timeElement = document.getElementById("current-time");
   if (timeElement) {
     setInterval(() => {
-      timeElement.textContent = new Date().toLocaleTimeString("en-GB", {
-        timeZone: "Europe/London",
-        hour12: true,
-        hour: "numeric",
-        minute: "numeric",
-      });
+      timeElement.textContent = getTimeNow();
     }, 1000);
   }
 </script>

@@ -15,3 +15,12 @@ export function formattedDate(date: Date) {
 
   return formattedDate;
 }
+
+export function getTimeNow() {
+  return new Date().toLocaleTimeString("en-GB", {
+    timeZone: "Europe/London",
+    hour12: true,
+    hour: "numeric",
+    minute: "numeric",
+  });
+}
