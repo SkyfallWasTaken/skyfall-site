@@ -25,6 +25,7 @@ const projectsCollection = defineCollection({
       mainImage: image(),
       smallTileImage: image().optional(),
       pinned: z.boolean().default(false),
+      tools: z.array(z.string()),
     }),
 });
 
