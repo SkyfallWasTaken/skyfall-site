@@ -8,14 +8,13 @@ import Chip from "@components/ui/chip.astro";
 import BlogPostPreview from "@components/misc/blog-post-preview.astro";
 import ProjectGrid from "@components/misc/project-grid.astro";
 
-import RustIcon from "@components/home/rust-icon.astro";
-import TsIcon from "@components/home/ts-icon.astro";
-import SvelteIcon from "@components/home/svelte-icon.astro";
-import AstroIcon from "@components/home/astro-icon.astro";
-import TwIcon from "@components/home/tw-icon.astro";
-// Astro icon libraries massively increase compile times for some reason.
-// See https://github.com/withastro/astro/issues/12793 for more details.
-/* import { Clock as ClockIcon, ArrowRight as ArrowRightIcon } from "lucide-astro"; */
+import RustIcon from "@components/langs/rust-icon.astro";
+import TsIcon from "@components/langs/ts-icon.astro";
+import SvelteIcon from "@components/langs/svelte-icon.astro";
+import AstroIcon from "@components/langs/astro-icon.astro";
+import TwIcon from "@components/langs/tw-icon.astro";
+import ClockIcon from "lucide-astro/Clock";
+import ArrowRightIcon from "lucide-astro/ArrowRight";
 import logoImage from "@assets/img/logo.png";
 
 import { getTimeNow } from "@/util";
@@ -49,7 +48,7 @@ const posts = blogCollection
 const latestThreePosts = posts.slice(0, 3);
 
 const pinnedProjects = projectsCollection.filter(
-  (project) => project.data.pinned,
+  (project) => project.data.pinned
 );
 ---
 
@@ -83,7 +82,7 @@ const pinnedProjects = projectsCollection.filter(
             </Chip>
           </OnlineStatus> -->
           <Chip>
-            <!-- <ClockIcon class="w-3.5 h-3.5" slot="pre" /> -->
+            <ClockIcon class="w-3.5 h-3.5" slot="pre" />
             <span slot="content" id="current-time">{initialTime}</span>
           </Chip>
         </div>
@@ -115,7 +114,7 @@ const pinnedProjects = projectsCollection.filter(
           class="ml-auto text-subtext0 hover:text-sky transition underline flex gap-1 items-center"
         >
           View all
-          <!-- <ArrowRightIcon class="w-4 h-4" /> -->
+          <ArrowRightIcon class="w-4 h-4" />
         </a>
       </div>
       <ProjectGrid projects={pinnedProjects} />
@@ -129,7 +128,7 @@ const pinnedProjects = projectsCollection.filter(
           class="ml-auto text-subtext0 hover:text-sky transition underline flex gap-1 items-center"
         >
           View all
-          <!--<ArrowRightIcon class="w-4 h-4" /> -->
+          <ArrowRightIcon class="w-4 h-4" />
         </a>
       </div>
       <ul class="space-y-2 leading-tight flex flex-col gap-2 sm:gap-0">
