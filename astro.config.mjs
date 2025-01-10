@@ -9,6 +9,8 @@ import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel";
 import sentry from "@sentry/astro";
 
+import { remarkAlert } from "remark-github-blockquote-alert";
+
 import { SITE_TITLE, SITE_DESCRIPTION } from "./src/constants";
 
 // https://astro.build/config
@@ -48,6 +50,7 @@ export default defineConfig({
         dark: "catppuccin-macchiato",
       },
     },
+    remarkPlugins: [remarkAlert],
   },
 
   env: {

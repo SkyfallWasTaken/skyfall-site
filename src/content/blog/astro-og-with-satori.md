@@ -6,8 +6,6 @@ pubDate: "January 5, 2025 18:00"
 draft: false
 ---
 
-import Card from "@components/ui/card.astro";
-
 When you share a link on social media, you want it to stand out. That's where OpenGraph (OG) images come in - they're
 the eye-catching previews that automatically appear when your content is shared on platforms like Twitter/X, Facebook,
 or Discord.
@@ -160,12 +158,8 @@ export async function PNG(component: h.JSX.Element) {
 }
 ```
 
-<div class="not-prose">
-  <Card border="border-yellow-500" bg="bg-base">
-    If your route param isn't called `id`, you'll need to change the references
-    to `id` to match your route param.
-  </Card>
-</div>
+> [!NOTE]
+> If your route param isn't called `id`, you'll need to change the references to `id` to match your route param.
 
 We're setting the image size to `1200x630`, which is the recommended size for OG images,
 and ensures your images look good on most platforms, like Twitter/X, Facebook, and Discord.
@@ -175,14 +169,11 @@ defines the fonts you're going to be using in your image! I've used the [Outfit]
 font here, but feel free to pick your own from places like [Google Fonts.](https://fonts.google.com) **Note that the relative paths are relative
 to the root directory of your project.**
 
-<div class="not-prose">
-  <Card border="border-yellow-500" bg="bg-base">
-    You might run into issues with variable font weights. This is due to [a bug
-    in Satori](https://github.com/vercel/satori/issues/162), which causes errors
-    when using variable font weights. To fix this, you'll need to use a fixed
-    font weight instead.
-  </Card>
-</div>
+> [!WARNING]
+> You might run into issues with variable font weights. This is due to [a bug
+  in Satori](https://github.com/vercel/satori/issues/162), which causes errors
+  when using variable font weights. To fix this, you'll need to use a fixed
+  font weight instead.
 
 ## Using the OG images
 
