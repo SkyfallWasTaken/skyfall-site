@@ -47,3 +47,12 @@ const { title, description, pubDate, ogImage, draft } = Astro.props;
     </div>
   </div>
 </Layout>
+
+<style is:global>
+  .prose
+    :where(p.markdown-alert-title):not(
+      :where([class~="not-prose"], [class~="not-prose"] *)
+    ) {
+    margin-top: 0 !important;
+  }
+</style>
