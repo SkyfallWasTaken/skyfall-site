@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "4.0.5",
+    "@astrojs/rss": "^4.0.11",
     "@astrojs/tailwind": "5.1.4",
     "@astrojs/vercel": "8.0.1",
     "@fontsource/fira-code": "^5.1.1",
