@@ -46,3 +46,5 @@ Disallow: /
 
 User-Agent: *
 Allow: /
+
+Sitemap: https://skyfall.dev/sitemap-index.xml
