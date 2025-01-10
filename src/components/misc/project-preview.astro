@@ -14,6 +14,7 @@ const image = project.data.smallTileImage || project.data.mainImage;
       <div class="relative aspect-video overflow-hidden rounded-lg mb-4">
         <Image
           src={image}
+          loading="eager"
           alt={project.data.title}
           class="object-cover w-full h-full duration-300 group-hover:scale-105"
         />
