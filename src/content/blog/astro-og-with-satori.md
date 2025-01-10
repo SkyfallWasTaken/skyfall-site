@@ -171,9 +171,9 @@ to the root directory of your project.**
 
 > [!WARNING]
 > You might run into issues with variable font weights. This is due to [a bug
-  in Satori](https://github.com/vercel/satori/issues/162), which causes errors
-  when using variable font weights. To fix this, you'll need to use a fixed
-  font weight instead.
+> in Satori](https://github.com/vercel/satori/issues/162), which causes errors
+> when using variable font weights. To fix this, you'll need to use a fixed
+> font weight instead.
 
 ## Using the OG images
 

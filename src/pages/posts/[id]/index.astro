@@ -20,7 +20,7 @@ sitemap(async ({ addToSitemap }) => {
       .filter((post) => !post.data.draft)
       .map((post) => ({
         id: post.id,
-      }))
+      })),
   );
 });
 
