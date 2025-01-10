@@ -14,10 +14,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/cloudflare": "^12.1.0",
     "@astrojs/mdx": "4.0.5",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/tailwind": "5.1.4",
+    "@astrojs/vercel": "^8.0.1",
     "@fontsource/fira-code": "^5.1.1",
     "@inox-tools/sitemap-ext": "^0.3.6",
     "@sentry/astro": "^8.48.0",

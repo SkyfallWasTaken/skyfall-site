@@ -6,7 +6,7 @@ import sitemap from "@inox-tools/sitemap-ext";
 import webmanifest from "astro-webmanifest";
 import mdx from "@astrojs/mdx";
 
-import cloudflare from "@astrojs/cloudflare";
+import vercel from "@astrojs/vercel";
 import sentry from "@sentry/astro";
 
 import { remarkAlert } from "remark-github-blockquote-alert";
@@ -87,5 +87,5 @@ export default defineConfig({
     },
   },
 
-  adapter: cloudflare(),
+  adapter: vercel(),
 });
