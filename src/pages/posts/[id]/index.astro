@@ -12,15 +12,15 @@ export async function getStaticPaths() {
   }));
 }
 
-sitemap(async ({ removeFromSitemap }) => {
-  const posts = await getCollection("blog");
+sitemap(async ({ addToSitemap }) => {
+  const blogPosts = await getCollection("blog");
 
-  removeFromSitemap(
-    posts
-      .filter((post) => post.data.draft)
+  addToSitemap(
+    blogPosts
+      .filter((post) => !post.data.draft)
       .map((post) => ({
         id: post.id,
-      })),
+      }))
   );
 });
 
