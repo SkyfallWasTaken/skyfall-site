@@ -3,6 +3,10 @@ import { type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import Card from "../ui/card.astro";
 
+// Technically, this whole spiel can be replaced with a nice dynamic import.
+// However, this *massively* increases build times because Vite isn't smart enough to
+// know that only the icons that are used in the content files are actually imported,
+// so it has to import them all. This is *slow!*
 import AstroIcon from "@skyfall-powered/simple-icons-astro/Astro";
 import SvelteIcon from "@skyfall-powered/simple-icons-astro/Svelte";
 import TsIcon from "@skyfall-powered/simple-icons-astro/Typescript";
