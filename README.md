@@ -1,12 +1,14 @@
 # skyfall.dev
 
+![Screenshot of the site](https://cloud-rd4az2bpw-hack-club-bot.vercel.app/0image.png)
+
 ## Features
 
 ### OpenGraph image generation
 
 OG images are automatically generated for blog posts!
 
-<img src="https://cloud-qkxfegiat-hack-club-bot.vercel.app/0image.png" alt="og image" style="border-radius: 10px;" />
+![image](https://cloud-qkxfegiat-hack-club-bot.vercel.app/0image.png)
 
 ### Discord status & local time
 
