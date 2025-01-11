@@ -28,7 +28,7 @@ const quotes = [
   "it's time to build!",
   "bashing bits and bytes",
   `enjoy your ${new Date()
-    .toLocaleDateString("en-US", {
+    .toLocaleDateString(navigator.language, {
       weekday: "long",
     })
     .toLowerCase()}!`,
