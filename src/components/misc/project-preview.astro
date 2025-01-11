@@ -7,36 +7,33 @@ import Card from "../ui/card.astro";
 // However, this *massively* increases build times because Vite isn't smart enough to
 // know that only the icons that are used in the content files are actually imported,
 // so it has to import them all. This is *slow!*
-import AstroIcon from "@skyfall-powered/simple-icons-astro/Astro";
-import SvelteIcon from "@skyfall-powered/simple-icons-astro/Svelte";
-import TsIcon from "@skyfall-powered/simple-icons-astro/Typescript";
-import TwIcon from "@skyfall-powered/simple-icons-astro/Tailwindcss";
-import RustIcon from "@skyfall-powered/simple-icons-astro/Rust";
-import SlackIcon from "@skyfall-powered/simple-icons-astro/Slack";
-import PlaywrightIcon from "@skyfall-powered/simple-icons-astro/Playwright";
+import Astro from "@skyfall-powered/simple-icons-astro/Astro";
+import Svelte from "@skyfall-powered/simple-icons-astro/Svelte";
+import Typescript from "@skyfall-powered/simple-icons-astro/Typescript";
+import Tailwindcss from "@skyfall-powered/simple-icons-astro/Tailwindcss";
+import Rust from "@skyfall-powered/simple-icons-astro/Rust";
+import Slack from "@skyfall-powered/simple-icons-astro/Slack";
+import Playwright from "@skyfall-powered/simple-icons-astro/Playwright";
 
 const { project } = Astro.props as { project: CollectionEntry<"projects"> };
 const image = project.data.smallTileImage || project.data.mainImage;
 
+const iconMap = {
+  Astro,
+  Svelte,
+  Typescript,
+  Tailwindcss,
+  Rust,
+  Slack,
+  Playwright,
+};
+
+type IconType = keyof typeof iconMap;
+
 const icons = project.data.tools.map((tool) => {
-  switch (tool) {
-    case "Astro":
-      return AstroIcon;
-    case "Svelte":
-      return SvelteIcon;
-    case "Typescript":
-      return TsIcon;
-    case "Tailwindcss":
-      return TwIcon;
-    case "Rust":
-      return RustIcon;
-    case "Slack":
-      return SlackIcon;
-    case "Playwright":
-      return PlaywrightIcon;
-    default:
-      throw new Error(`Unknown tool: ${tool}`);
-  }
+  const Icon = iconMap[tool as IconType];
+  if (!Icon) throw new Error(`Unknown icon: ${tool}`);
+  return Icon;
 });
 ---
 
