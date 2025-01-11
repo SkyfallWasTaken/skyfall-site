@@ -5,4 +5,5 @@ smallTileImage: "@assets/img/projects/wakatime-for-figma/small-tile.png"
 mainImage: "@assets/img/projects/wakatime-for-figma/small-tile.png"
 pinned: true
 tools: ["Typescript", "Svelte", "Tailwindcss"]
+url: "https://go.skyfall.dev/waka"
 ---

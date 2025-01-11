@@ -22,6 +22,7 @@ const projectsCollection = defineCollection({
     z.object({
       title: z.string(),
       tagline: z.string(),
+      url: z.string().url(),
       mainImage: image(),
       smallTileImage: image().optional(),
       pinned: z.boolean().default(false),
