@@ -20,6 +20,10 @@ My site has a blogpost feature, powered by Astro Content Collections.
 
 ![image](https://cloud-nbsqz2ih4-hack-club-bot.vercel.app/0image.png)
 
+## Simple Icons fork
+
+My site uses a fork of [Simple Icons](https://simpleicons.org) for icons (`@skyfall-powered/simple-icons-astro`), forked to decrease build times.
+
 ## Development
 
 ```bash
