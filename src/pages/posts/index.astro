@@ -5,6 +5,9 @@ import Layout from "@layouts/layout.astro";
 import BlogPostPreview from "@components/misc/blog-post-preview.astro";
 
 const blogCollection = await getCollection("blog");
+const posts = blogCollection
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <Layout title="Blog">
@@ -12,12 +15,8 @@ const blogCollection = await getCollection("blog");
     <h1>Blog</h1>
   </div>
   <div>
-    <ol class="space-y-4">
-      {
-        blogCollection
-          .filter((post) => !post.data.draft)
-          .map((post) => <BlogPostPreview post={post} />)
-      }
+    <ol class="space-y-2.5">
+      {posts.map((post) => <BlogPostPreview post={post} />)}
     </ol>
   </div>
 </Layout>
