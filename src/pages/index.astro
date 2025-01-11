@@ -37,7 +37,6 @@ const quotes = [
   "aye aye cap'n!",
 ];
 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-const initialTime = getTimeNow();
 
 const blogCollection = await getCollection("blog");
 const projectsCollection = await getCollection("projects");
@@ -83,7 +82,7 @@ const pinnedProjects = projectsCollection.filter(
           </OnlineStatus> -->
           <Chip>
             <ClockIcon class="w-3.5 h-3.5" slot="pre" />
-            <span slot="content" id="current-time">{initialTime}</span>
+            <span slot="content" id="current-time">Loading...</span>
           </Chip>
         </div>
 
