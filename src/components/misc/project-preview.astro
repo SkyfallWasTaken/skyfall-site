@@ -3,8 +3,37 @@ import { type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import Card from "../ui/card.astro";
 
+import AstroIcon from "@skyfall-powered/simple-icons-astro/Astro";
+import SvelteIcon from "@skyfall-powered/simple-icons-astro/Svelte";
+import TsIcon from "@skyfall-powered/simple-icons-astro/Typescript";
+import TwIcon from "@skyfall-powered/simple-icons-astro/Tailwindcss";
+import RustIcon from "@skyfall-powered/simple-icons-astro/Rust";
+import SlackIcon from "@skyfall-powered/simple-icons-astro/Slack";
+import PlaywrightIcon from "@skyfall-powered/simple-icons-astro/Playwright";
+
 const { project } = Astro.props as { project: CollectionEntry<"projects"> };
 const image = project.data.smallTileImage || project.data.mainImage;
+
+const icons = project.data.tools.map((tool) => {
+  switch (tool) {
+    case "Astro":
+      return AstroIcon;
+    case "Svelte":
+      return SvelteIcon;
+    case "Typescript":
+      return TsIcon;
+    case "Tailwindcss":
+      return TwIcon;
+    case "Rust":
+      return RustIcon;
+    case "Slack":
+      return SlackIcon;
+    case "Playwright":
+      return PlaywrightIcon;
+    default:
+      throw new Error(`Unknown tool: ${tool}`);
+  }
+});
 ---
 
 <li class="flex">
@@ -19,11 +48,18 @@ const image = project.data.smallTileImage || project.data.mainImage;
           class="object-cover w-full h-full duration-300 group-hover:scale-105"
         />
       </div>
-      <div class="space-y-1">
-        <h3 class="text-xl font-semibold tracking-tight">
-          {project.data.title}
-        </h3>
-        <p>{project.data.tagline}</p>
+      <div class="space-y-3.5">
+        <div>
+          <h3 class="text-xl font-semibold tracking-tight">
+            {project.data.title}
+          </h3>
+          <p>{project.data.tagline}</p>
+        </div>
+        <div
+          class="flex gap-1 *:fill-current *:w-8 hover:*:fill-lavender *:transition *:cursor-pointer"
+        >
+          {icons.map((Icon) => Icon && <Icon size={24} />)}
+        </div>
       </div>
     </a>
   </Card>
