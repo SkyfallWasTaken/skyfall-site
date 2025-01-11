@@ -1,7 +1,5 @@
 ---
-import { DISCORD_USER_ID } from "astro:env/client";
-import { fetchUserData as fetchLanyardUserData } from "lanyard-wrapper";
-
+import { actions } from "astro:actions";
 import Chip from "../ui/chip.astro";
 import ChipCircle from "../ui/chip-circle.astro";
 
@@ -18,13 +16,15 @@ const STATUS_TEXT = {
   offline: "Offline",
 };
 
-const d = await fetchLanyardUserData(DISCORD_USER_ID);
-const status = d.discord_status;
+const { data } = await Astro.callAction(actions.discord.profile, null);
+const status = data?.discord_status;
 ---
 
-<Chip>
-  <ChipCircle fill={STATUS_COLOURS[status]} slot="pre" />
-  <span slot="content">
-    {STATUS_TEXT[status]}
-  </span>
-</Chip>
+{
+  status && (
+    <Chip>
+      <ChipCircle fill={STATUS_COLOURS[status]} slot="pre" />
+      <span slot="content">{STATUS_TEXT[status]}</span>
+    </Chip>
+  )
+}

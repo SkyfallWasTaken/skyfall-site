@@ -5,8 +5,10 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/layout.astro";
 import Button from "@components/ui/button.astro";
 import Chip from "@components/ui/chip.astro";
+import ChipCircle from "@components/ui/chip-circle.astro";
 import BlogPostPreview from "@components/misc/blog-post-preview.astro";
 import ProjectGrid from "@components/misc/project-grid.astro";
+import OnlineStatus from "@components/home/online-status.astro";
 
 import RustIcon from "@skyfall-powered/simple-icons-astro/Rust";
 import TsIcon from "@skyfall-powered/simple-icons-astro/Typescript";
@@ -16,8 +18,6 @@ import TwIcon from "@skyfall-powered/simple-icons-astro/Tailwindcss";
 import ClockIcon from "lucide-astro/Clock";
 import ArrowRightIcon from "lucide-astro/ArrowRight";
 import logoImage from "@assets/img/logo.png";
-
-import { getTimeNow } from "@/util";
 
 const quotes = [
   "code whisperer by day, chaos enthusiast by night",
@@ -47,7 +47,7 @@ const posts = blogCollection
 const latestThreePosts = posts.slice(0, 3);
 
 const pinnedProjects = projectsCollection.filter(
-  (project) => project.data.pinned,
+  (project) => project.data.pinned
 );
 ---
 
@@ -74,12 +74,12 @@ const pinnedProjects = projectsCollection.filter(
           </div>
         </div>
         <div class="flex w-fit gap-2 mb-4">
-          <!-- <OnlineStatus server:defer>
+          <OnlineStatus server:defer>
             <Chip slot="fallback">
               <ChipCircle fill="fill-green" slot="pre" />
-              <span slot="content">Online</span>
+              <span slot="content">Loading...</span>
             </Chip>
-          </OnlineStatus> -->
+          </OnlineStatus>
           <Chip>
             <ClockIcon class="w-3.5 h-3.5" slot="pre" />
             <span slot="content" id="current-time">Loading...</span>
