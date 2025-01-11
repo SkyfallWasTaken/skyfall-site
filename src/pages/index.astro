@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import { getTimeNow } from "@/util";
 
 import Layout from "@layouts/layout.astro";
 import Button from "@components/ui/button.astro";
@@ -37,6 +38,7 @@ const quotes = [
   "aye aye cap'n!",
 ];
 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+const timeNow = getTimeNow();
 
 const blogCollection = await getCollection("blog");
 const projectsCollection = await getCollection("projects");
@@ -47,8 +49,10 @@ const posts = blogCollection
 const latestThreePosts = posts.slice(0, 3);
 
 const pinnedProjects = projectsCollection.filter(
-  (project) => project.data.pinned,
+  (project) => project.data.pinned
 );
+
+export const prerender = false;
 ---
 
 <Layout title="Home">
@@ -82,7 +86,7 @@ const pinnedProjects = projectsCollection.filter(
           </OnlineStatus>
           <Chip>
             <ClockIcon class="w-3.5 h-3.5" slot="pre" />
-            <span slot="content" id="current-time">Loading...</span>
+            <span slot="content" id="current-time">{timeNow}</span>
           </Chip>
         </div>
 
