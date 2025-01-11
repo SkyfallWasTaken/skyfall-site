@@ -43,7 +43,11 @@ const icons = project.data.tools.map((tool) => {
 <li class="flex">
   <Card>
     <!-- FIXME: Add popup -->
-    <a href={project.data.url} class="group block leading-tight">
+    <a
+      href={project.data.url}
+      target="_blank"
+      class="group block leading-tight"
+    >
       <div class="relative aspect-video overflow-hidden rounded-lg mb-4">
         <Image
           src={image}
