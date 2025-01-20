@@ -73,51 +73,53 @@ const NAV_ITEMS = [
 </nav>
 
 <script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const navItems = document.getElementById("nav-items");
+  document.addEventListener("astro:page-load", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navItems = document.getElementById("nav-items");
 
-  if (menuToggle && navItems) {
-    menuToggle.addEventListener("click", () => {
-      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", (!isExpanded).toString());
+    if (menuToggle && navItems) {
+      menuToggle.addEventListener("click", () => {
+        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", (!isExpanded).toString());
 
-      if (!isExpanded) {
-        // Show menu
-        navItems.classList.remove("hidden");
-        navItems.classList.add("animate-slide-down");
-        navItems.classList.remove("animate-slide-up");
-        navItems.dataset.showing = "true";
-      } else {
-        // Hide menu
-        navItems.classList.add("animate-slide-up");
-        navItems.classList.remove("animate-slide-down");
-        navItems.dataset.showing = "false";
-        // Wait for animation to finish before hiding
-        setTimeout(() => {
-          if (navItems.dataset.showing === "false") {
-            navItems.classList.add("hidden");
-          }
-        }, 150);
-      }
-    });
+        if (!isExpanded) {
+          // Show menu
+          navItems.classList.remove("hidden");
+          navItems.classList.add("animate-slide-down");
+          navItems.classList.remove("animate-slide-up");
+          navItems.dataset.showing = "true";
+        } else {
+          // Hide menu
+          navItems.classList.add("animate-slide-up");
+          navItems.classList.remove("animate-slide-down");
+          navItems.dataset.showing = "false";
+          // Wait for animation to finish before hiding
+          setTimeout(() => {
+            if (navItems.dataset.showing === "false") {
+              navItems.classList.add("hidden");
+            }
+          }, 150);
+        }
+      });
 
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-      if (
-        !menuToggle.contains(e.target as Node) &&
-        !navItems.contains(e.target as Node) &&
-        navItems.dataset.showing === "true"
-      ) {
-        menuToggle.setAttribute("aria-expanded", "false");
-        navItems.classList.add("animate-slide-up");
-        navItems.classList.remove("animate-slide-down");
-        navItems.dataset.showing = "false";
-        setTimeout(() => {
-          if (navItems.dataset.showing === "false") {
-            navItems.classList.add("hidden");
-          }
-        }, 150);
-      }
-    });
-  }
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (
+          !menuToggle.contains(e.target as Node) &&
+          !navItems.contains(e.target as Node) &&
+          navItems.dataset.showing === "true"
+        ) {
+          menuToggle.setAttribute("aria-expanded", "false");
+          navItems.classList.add("animate-slide-up");
+          navItems.classList.remove("animate-slide-down");
+          navItems.dataset.showing = "false";
+          setTimeout(() => {
+            if (navItems.dataset.showing === "false") {
+              navItems.classList.add("hidden");
+            }
+          }, 150);
+        }
+      });
+    }
+  });
 </script>
