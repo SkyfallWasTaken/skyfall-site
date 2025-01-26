@@ -4,5 +4,5 @@ tagline: A helpful newspaper bot for Hack Club - handles story writing, editor a
 mainImage: "@assets/img/projects/archimedes.svg"
 pinned: true
 tools: ["Slack", "Airtable", "Typescript"]
-url: "https://github.com/SkyfallWasTaken/Archimedes"
+url: "https://go.skyfall.dev/archimedes"
 ---
