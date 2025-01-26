@@ -13,6 +13,8 @@ import { remarkAlert } from "remark-github-blockquote-alert";
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "./src/constants";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://skyfall.dev",
@@ -87,5 +89,5 @@ export default defineConfig({
     },
   },
 
-  adapter: vercel(),
+  adapter: netlify(),
 });
