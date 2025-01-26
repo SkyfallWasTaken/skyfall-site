@@ -9,11 +9,14 @@ import Card from "../ui/card.astro";
 // so it has to import them all. This is *slow!*
 import AstroIcon from "@skyfall-powered/simple-icons-astro/Astro";
 import Playwright from "@skyfall-powered/simple-icons-astro/Playwright";
+import React from "@skyfall-powered/simple-icons-astro/React";
+import Reactrouter from "@skyfall-powered/simple-icons-astro/Reactrouter";
 import Rust from "@skyfall-powered/simple-icons-astro/Rust";
 import Slack from "@skyfall-powered/simple-icons-astro/Slack";
 import Svelte from "@skyfall-powered/simple-icons-astro/Svelte";
 import Tailwindcss from "@skyfall-powered/simple-icons-astro/Tailwindcss";
 import Typescript from "@skyfall-powered/simple-icons-astro/Typescript";
+import Airtable from "@skyfall-powered/simple-icons-astro/Airtable";
 
 const { project } = Astro.props as { project: CollectionEntry<"projects"> };
 const image = project.data.smallTileImage || project.data.mainImage;
@@ -26,6 +29,9 @@ const iconMap = {
   Rust,
   Slack,
   Playwright,
+  Reactrouter,
+  React,
+  Airtable,
 };
 
 type IconType = keyof typeof iconMap;
