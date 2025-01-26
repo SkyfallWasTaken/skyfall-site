@@ -54,5 +54,17 @@ const { title, description, pubDate, ogImage, draft } = Astro.props;
       :where([class~="not-prose"], [class~="not-prose"] *)
     ) {
     margin-top: 0 !important;
+    margin-bottom: 0.5em !important;
   }
+
+  .prose .markdown-alert p:last-child {
+    margin: 0!important;
+  }
+
+  /* .prose
+    :where(.markdown-alert p:last-child):not(
+      :where([class~="not-prose"], [class~="not-prose"] *)
+    ) {
+    margin-top: 0 !important;
+  } */
 </style>

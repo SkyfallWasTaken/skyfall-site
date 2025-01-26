@@ -2,9 +2,15 @@
 import type { CollectionEntry } from "astro:content";
 import ProjectPreview from "./project-preview.astro";
 
-const { projects } = Astro.props as { projects: CollectionEntry<"projects">[] };
+interface Props {
+  projects: CollectionEntry<"projects">[];
+  maxThreeOnMobile?: boolean;
+}
+const { projects, maxThreeOnMobile = false } = Astro.props;
 ---
 
-<ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<ul
+  class={`grid grid-cols-1 md:grid-cols-2 gap-4 ${maxThreeOnMobile ? "[&>*:nth-child(4)]:hidden sm:[&>*:nth-child(4)]:block" : ""}`}
+>
   {projects.map((project) => <ProjectPreview project={project} />)}
 </ul>
