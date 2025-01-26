@@ -7,11 +7,9 @@ export function formattedDate(date: Date) {
     return num + (suffixes[(val - 20) % 10] || suffixes[val] || suffixes[0]);
   }
 
-  const formattedDate =
-    format(date, "MMMM ") +
-    getOrdinal(date.getDate()) +
-    " " +
-    format(date, "yyyy");
+  const formattedDate = `${
+    format(date, "MMMM ") + getOrdinal(date.getDate())
+  } ${format(date, "yyyy")}`;
 
   return formattedDate;
 }

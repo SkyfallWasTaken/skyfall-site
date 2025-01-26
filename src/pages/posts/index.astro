@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 
-import Layout from "@layouts/layout.astro";
 import BlogPostPreview from "@components/misc/blog-post-preview.astro";
+import Layout from "@layouts/layout.astro";
 
 const blogCollection = await getCollection("blog");
 const posts = blogCollection

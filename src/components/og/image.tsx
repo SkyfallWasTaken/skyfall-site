@@ -1,4 +1,4 @@
-import { type CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import { formattedDate } from "../../util";
 
 export default function (props: CollectionEntry<"blog">) {

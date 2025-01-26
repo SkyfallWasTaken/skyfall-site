@@ -1,17 +1,17 @@
 // @ts-check
 import { defineConfig, envField } from "astro/config";
 
+import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@inox-tools/sitemap-ext";
 import webmanifest from "astro-webmanifest";
-import mdx from "@astrojs/mdx";
 
 import vercel from "@astrojs/vercel";
 import sentry from "@sentry/astro";
 
 import { remarkAlert } from "remark-github-blockquote-alert";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "./src/constants";
+import { SITE_DESCRIPTION, SITE_TITLE } from "./src/constants";
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,7 +33,7 @@ export default defineConfig({
       background_color: "#1e1e2e", // mocha base
       display: "standalone",
     }),
-    process.env.SENTRY_AUTH_TOKEN != undefined &&
+    process.env.SENTRY_AUTH_TOKEN !== undefined &&
       sentry({
         dsn: process.env.SENTRY_DSN,
         sourceMapsUploadOptions: {

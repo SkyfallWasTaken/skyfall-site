@@ -3,22 +3,22 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { getTimeNow } from "@/util";
 
-import Layout from "@layouts/layout.astro";
-import Button from "@components/ui/button.astro";
-import Chip from "@components/ui/chip.astro";
-import ChipCircle from "@components/ui/chip-circle.astro";
+import OnlineStatus from "@components/home/online-status.astro";
 import BlogPostPreview from "@components/misc/blog-post-preview.astro";
 import ProjectGrid from "@components/misc/project-grid.astro";
-import OnlineStatus from "@components/home/online-status.astro";
+import Button from "@components/ui/button.astro";
+import ChipCircle from "@components/ui/chip-circle.astro";
+import Chip from "@components/ui/chip.astro";
+import Layout from "@layouts/layout.astro";
 
-import RustIcon from "@skyfall-powered/simple-icons-astro/Rust";
-import TsIcon from "@skyfall-powered/simple-icons-astro/Typescript";
-import SvelteIcon from "@skyfall-powered/simple-icons-astro/Svelte";
-import AstroIcon from "@skyfall-powered/simple-icons-astro/Astro";
-import TwIcon from "@skyfall-powered/simple-icons-astro/Tailwindcss";
-import ClockIcon from "lucide-astro/Clock";
-import ArrowRightIcon from "lucide-astro/ArrowRight";
 import logoImage from "@assets/img/logo.png";
+import AstroIcon from "@skyfall-powered/simple-icons-astro/Astro";
+import RustIcon from "@skyfall-powered/simple-icons-astro/Rust";
+import SvelteIcon from "@skyfall-powered/simple-icons-astro/Svelte";
+import TwIcon from "@skyfall-powered/simple-icons-astro/Tailwindcss";
+import TsIcon from "@skyfall-powered/simple-icons-astro/Typescript";
+import ArrowRightIcon from "lucide-astro/ArrowRight";
+import ClockIcon from "lucide-astro/Clock";
 
 const quotes = [
   "code whisperer by day, chaos enthusiast by night",

@@ -32,7 +32,7 @@ export default {
             "--tw-prose-captions": theme(`colors.${accent}.DEFAULT`),
             "--tw-prose-code": theme(`colors.${accent}.DEFAULT`),
             "--tw-prose-pre-code": theme(`colors.${accent}.DEFAULT`),
-            "--tw-prose-pre-bg": theme(`colors.base.DEFAULT`),
+            "--tw-prose-pre-bg": theme("colors.base.DEFAULT"),
             "--tw-prose-th-borders": theme(`colors.${accent}.DEFAULT`),
             "--tw-prose-td-borders": theme(`colors.${accent}.DEFAULT`),
             "--tw-prose-invert-body": theme(`colors.${accent}.DEFAULT`),

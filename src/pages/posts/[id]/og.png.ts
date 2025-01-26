@@ -1,13 +1,13 @@
-import fs from "fs/promises";
-import satori from "satori";
-import sharp from "sharp";
+import fs from "node:fs/promises";
 import { getCollection } from "astro:content";
 import type { InferGetStaticParamsType } from "astro";
+import satori from "satori";
+import sharp from "sharp";
 
 import OpenGraphImage from "@components/og/image";
-import { tailwindToCSS, type TailwindConfig } from "tw-to-css";
-import { cloneElement, isValidElement, type h } from "preact";
+import { cloneElement, type h, isValidElement } from "preact";
 import { Children } from "preact/compat";
+import { type TailwindConfig, tailwindToCSS } from "tw-to-css";
 
 const posts = await getCollection("blog");
 const { twj } = tailwindToCSS({
@@ -58,7 +58,7 @@ function inlineTailwind(el: h.JSX.Element): h.JSX.Element {
 }
 
 export async function SVG(component: h.JSX.Element) {
-  return await satori(component as any, {
+  return await satori(component, {
     width: 1200,
     height: 630,
     fonts: [
