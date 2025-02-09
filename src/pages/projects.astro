@@ -7,8 +7,9 @@ const projects = await getCollection("projects");
 ---
 
 <Layout title="Projects">
-  <div class="prose mt-10 mb-6">
-    <h1>Projects</h1>
+  <div class="mt-10 mb-6">
+    <h1 class="text-4xl font-extrabold mb-2">Projects</h1>
+    <p>Here are some of the projects I've worked on! This isn't an exhaustive list; these are the projects I'm actually willing to show off :)</p>
   </div>
   <ProjectGrid projects={projects} />
 </Layout>

@@ -4,6 +4,6 @@ tagline: Browser extension that brings WakaTime's time-tracking capabilities to 
 smallTileImage: "@assets/img/projects/wakatime-for-figma/small-tile.png"
 mainImage: "@assets/img/projects/wakatime-for-figma/small-tile.png"
 pinned: true
-tools: ["Typescript", "Svelte", "Tailwindcss"]
+tools: ["Typescript", "Svelte", "Tailwindcss", "Wakatime"]
 url: "https://go.skyfall.dev/waka"
 ---
