@@ -1,6 +1,7 @@
 # skyfall.dev
 
-![Screenshot of the site](https://cloud-rd4az2bpw-hack-club-bot.vercel.app/0image.png)
+![Screenshot of the site](https://cdn.hack.pet/slackcdn/4cde3d37d983e8fb50c9fae8b841be46.png
+)
 
 ## Features
 
@@ -14,13 +15,13 @@ OG images are automatically generated for blog posts!
 
 The website fetches my Discord online status and the time in the UK, and shows them on the homepage.
 
-![image](https://cloud-11okwfto6-hack-club-bot.vercel.app/0image.png)
+![image](https://cdn.hackclubber.dev/slackcdn/4047566bbcafbaa788b1adbbaf8d33a6.png)
 
 ### Blogposts
 
 My site has a blogpost feature, powered by Astro Content Collections.
 
-![image](https://cloud-nbsqz2ih4-hack-club-bot.vercel.app/0image.png)
+![image](https://cdn.hackclubber.dev/slackcdn/5089b0ff86fb4c6fe62d0493bcd07183.png)
 
 ## Simple Icons fork
 
