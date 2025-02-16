@@ -1,0 +1,33 @@
+---
+import Github from "@skyfall-powered/simple-icons-astro/Github"
+import X from "@skyfall-powered/simple-icons-astro/X"
+
+import childProcess from "node:child_process";
+ 
+// obtain Git commit hash and message
+const hash = childProcess
+  .execSync("git rev-parse --short HEAD")
+  .toString()
+  .trim();
+
+const message = childProcess
+  .execSync("git log -1 --pretty=%s")
+  .toString()
+  .trim();
+---
+
+<div class="w-full text-center flex flex-col justify-center">
+    <a href="https://skyfall.dev/rss.xml" class="text-mauve">Subscribe on RSS</a>
+    <div class="text-mauve justify-center flex my-3 gap-3">
+        <a href="https://github.com/SkyfallWasTaken" target="_blank" class="hover:rotate-[-5deg] transition-transform duration-300">
+            <Github size={32}/>
+        </a>
+        <a href="https://x.com/skyfall_ggs" target="_blank" class="hover:rotate-[5deg] transition-transform duration-300">
+            <X size={32}/>
+        </a>
+    </div>
+    <p>&copy; {new Date().getFullYear()} Mahad Kalam.</p>
+    <a href={`https://github.com/SkyfallWasTaken/skyfall-site/commit/${hash}`} class="hover:underline my-1">
+        {message} <span class="text-mauve">({hash})</span>
+    </a>
+</div>
