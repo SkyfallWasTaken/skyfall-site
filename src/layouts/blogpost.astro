@@ -16,12 +16,14 @@ const { title, description, pubDate, ogImage, draft } = Astro.props;
   <div class="mt-10 w-full">
     <div class="text-center">
       <!-- Title, date and description -->
-      <div class="not-prose w-full">
-        <h1 class="text-4xl w-full font-black text-text mb-1">
-          {title}
-        </h1>
-        <p class="text-lg italic mb-3">{description}</p>
-        <div>
+      <div class="not-prose w-full space-y-6">
+        <div class="space-y-2">
+          <h1 class="text-5xl w-full font-extrabold text-text tracking-tight">
+            {title}
+          </h1>
+          <p class="text-lg text-text/80 leading-relaxed">{description}</p>
+        </div>
+        <div class="text-surface2 font-medium">
           <FormattedDate date={pubDate} />
         </div>
         {
