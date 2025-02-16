@@ -1,10 +1,10 @@
 ---
-import Github from "@skyfall-powered/simple-icons-astro/Github"
-import X from "@skyfall-powered/simple-icons-astro/X"
-import GitCommitHorizontal from "lucide-astro/GitCommitHorizontal"
+import Github from "@skyfall-powered/simple-icons-astro/Github";
+import X from "@skyfall-powered/simple-icons-astro/X";
+import GitCommitHorizontal from "lucide-astro/GitCommitHorizontal";
 
 import childProcess from "node:child_process";
- 
+
 // obtain Git commit hash and message
 const hash = childProcess
   .execSync("git rev-parse --short HEAD")
