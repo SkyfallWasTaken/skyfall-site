@@ -1,6 +1,7 @@
 ---
 import Github from "@skyfall-powered/simple-icons-astro/Github"
 import X from "@skyfall-powered/simple-icons-astro/X"
+import GitCommitHorizontal from "lucide-astro/GitCommitHorizontal"
 
 import childProcess from "node:child_process";
  
@@ -16,6 +17,7 @@ const message = childProcess
   .trim();
 ---
 
+<hr class="h-px my-8 bg-surface0 border-0"/>
 <div class="w-full text-center flex flex-col justify-center">
     <a href="https://skyfall.dev/rss.xml" class="text-mauve">Subscribe on RSS</a>
     <div class="text-mauve justify-center flex my-3 gap-3">
@@ -27,7 +29,10 @@ const message = childProcess
         </a>
     </div>
     <p>&copy; {new Date().getFullYear()} Mahad Kalam.</p>
-    <a href={`https://github.com/SkyfallWasTaken/skyfall-site/commit/${hash}`} class="hover:underline my-1">
+    <a href={`https://github.com/SkyfallWasTaken/skyfall-site/commit/${hash}`} class="flex gap-1 justify-center hover:underline my-1">
+        <span class="text-mauve">
+            <GitCommitHorizontal />
+        </span>
         {message} <span class="text-mauve">({hash})</span>
     </a>
 </div>
