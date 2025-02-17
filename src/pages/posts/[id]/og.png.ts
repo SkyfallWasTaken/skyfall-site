@@ -69,8 +69,10 @@ export async function SVG(component: h.JSX.Element) {
       },
       {
         name: "Inter",
-        data: await fs.readFile("./src/assets/fonts/og/InterDisplay-ExtraBold.ttf"),
-      weight: 800,
+        data: await fs.readFile(
+          "./src/assets/fonts/og/InterDisplay-ExtraBold.ttf",
+        ),
+        weight: 800,
       },
     ],
   });
