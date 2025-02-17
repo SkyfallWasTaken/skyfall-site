@@ -63,14 +63,14 @@ export async function SVG(component: h.JSX.Element) {
     height: 630,
     fonts: [
       {
-        name: "Outfit",
-        data: await fs.readFile("./src/assets/fonts/og/Outfit-Regular.ttf"),
+        name: "Inter",
+        data: await fs.readFile("./src/assets/fonts/og/Inter-Regular.ttf"),
         weight: 400,
       },
       {
-        name: "Outfit",
-        data: await fs.readFile("./src/assets/fonts/og/Outfit-SemiBold.ttf"),
-        weight: 600,
+        name: "Inter",
+        data: await fs.readFile("./src/assets/fonts/og/InterDisplay-ExtraBold.ttf"),
+      weight: 800,
       },
     ],
   });
