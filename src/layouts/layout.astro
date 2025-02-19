@@ -68,7 +68,7 @@ const { title, description = SITE_DESCRIPTION, ogImage } = Astro.props;
     <main><slot /></main>
 
     {UMAMI_SCRIPT && UMAMI_WEBSITE_ID && (
-      <script type="text/javascript">
+      <script>
         (() => {
           const name = 'outbound-link-click';
           document.querySelectorAll('a').forEach(a => {

@@ -19,20 +19,20 @@ const { title, description, pubDate, ogImage, draft } = Astro.props;
       <!-- Title, date and description -->
       <div class="not-prose w-full space-y-6">
         <div class="space-y-2">
-          <h1 class="text-5xl w-full font-extrabold text-text tracking-tight">
+          <h1 class="text-5xl w-full font-extrabold tracking-[-0.0125em] text-text">
             {title}
           </h1>
           <p class="text-lg text-text/80 leading-relaxed">{description}</p>
         </div>
-        <div class="text-surface2 font-medium">
+        <div class="text-text/85 font-medium">
           <FormattedDate date={pubDate} />
         </div>
         {
           draft && (
             <div class="mt-4 text-left max-w-full">
-              <Card border="border-yellow-500" bg="bg-base">
-                <h2 class="text-xl font-bold">This is a draft post</h2>
-                <p class="text-sm">
+              <Card border="border-yellow-500 bg-yellow-500/10" bg="bg-base">
+                <h2 class="text-xl font-bold">This is a draft post!</h2>
+                <p class="leading-tight text-sm">
                   It may have typos, unfinished sections, or inaccuracies.
                   Please don't share it until it's been published!
                 </p>
