@@ -20,24 +20,6 @@ import TsIcon from "@skyfall-powered/simple-icons-astro/Typescript";
 import ArrowRightIcon from "lucide-astro/ArrowRight";
 import ClockIcon from "lucide-astro/Clock";
 
-const quotes = [
-  "code whisperer by day, chaos enthusiast by night",
-  "freefalling through the internet",
-  "the internet is a series of tubes",
-  "welcome to the internet, have a look around",
-  "it's time to build!",
-  "bashing bits and bytes",
-  `enjoy your ${new Date()
-    .toLocaleDateString(navigator.language, {
-      weekday: "long",
-    })
-    .toLowerCase()}!`,
-  "code is poetry (well, sometimes)",
-  "it's time to sail the high seas!",
-  "it's better to be a pirate than to join the navy!",
-  "aye aye cap'n!",
-];
-const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 const timeNow = getTimeNow();
 
 const blogCollection = await getCollection("blog");
@@ -59,7 +41,7 @@ const pinnedProjects = projectsCollection.filter(
       <div id="hero">
         <div class="mb-2" x-data>
           <h1 class="text-3xl font-extrabold mb-1">Hey, I'm Mahad! 👋</h1>
-          <p class="mb-0 font-mono tracking-tight">{randomQuote}</p>
+          <p class="mb-0 font-mono tracking-tight" id="random-quote"></p>
         </div>
         <div class="space-y-1 mb-6">
           <small class="uppercase font-semibold text-overlay2 mb-4"
@@ -147,5 +129,28 @@ const pinnedProjects = projectsCollection.filter(
     setInterval(() => {
       timeElement.textContent = getTimeNow();
     }, 1000);
+  }
+
+  const quotes = [
+    "code whisperer by day, chaos enthusiast by night",
+    "freefalling through the internet",
+    "the internet is a series of tubes",
+    "welcome to the internet, have a look around",
+    "it's time to build!",
+    "bashing bits and bytes",
+    `enjoy your ${new Date()
+      .toLocaleDateString(navigator.language, {
+        weekday: "long",
+      })
+      .toLowerCase()}!`,
+    "code is poetry (well, sometimes)",
+    "it's time to sail the high seas!",
+    "it's better to be a pirate than to join the navy!",
+    "aye aye cap'n!",
+  ];
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  const quoteElement = document.getElementById("random-quote");
+  if (quoteElement) {
+    quoteElement.textContent = randomQuote;
   }
 </script>
