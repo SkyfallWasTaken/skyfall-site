@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import { getTimeNow } from "@/util";
 
 import OnlineStatus from "@components/home/online-status.astro";
 import BlogPostPreview from "@components/misc/blog-post-preview.astro";
@@ -19,8 +18,6 @@ import TwIcon from "@skyfall-powered/simple-icons-astro/Tailwindcss";
 import TsIcon from "@skyfall-powered/simple-icons-astro/Typescript";
 import ArrowRightIcon from "lucide-astro/ArrowRight";
 import ClockIcon from "lucide-astro/Clock";
-
-const timeNow = getTimeNow();
 
 const blogCollection = await getCollection("blog");
 const projectsCollection = await getCollection("projects");
@@ -66,7 +63,7 @@ const pinnedProjects = projectsCollection.filter(
           </OnlineStatus>
           <Chip>
             <ClockIcon class="w-3.5 h-3.5" slot="pre" />
-            <span slot="content" id="current-time">{timeNow}</span>
+            <span slot="content" id="current-time">one sec...</span>
           </Chip>
         </div>
 
@@ -124,13 +121,6 @@ const pinnedProjects = projectsCollection.filter(
 <script>
   import { getTimeNow } from "@/util";
 
-  const timeElement = document.getElementById("current-time");
-  if (timeElement) {
-    setInterval(() => {
-      timeElement.textContent = getTimeNow();
-    }, 1000);
-  }
-
   const day = new Date()
     .toLocaleDateString(navigator.language, {
       weekday: "long",
@@ -147,13 +137,27 @@ const pinnedProjects = projectsCollection.filter(
     "it's time to sail the high seas!",
     "aye aye cap'n!",
   ];
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-  const quoteElement = document.getElementById("random-quote");
-  if (quoteElement) {
-    quoteElement.textContent = randomQuote;
-    // Add a small delay before showing the quote to ensure the transition works
-    setTimeout(() => {
-      quoteElement.classList.remove("opacity-0");
-    }, 100);
+
+  function updateElements() {
+    const timeElement = document.getElementById("current-time");
+    if (timeElement) {
+      timeElement.textContent = getTimeNow();
+      setInterval(() => {
+        timeElement.textContent = getTimeNow();
+      }, 1000);
+    }
+
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    const quoteElement = document.getElementById("random-quote");
+    if (quoteElement) {
+      quoteElement.textContent = randomQuote;
+      // Add a small delay before showing the quote to ensure the transition works
+      setTimeout(() => {
+        quoteElement.classList.remove("opacity-0");
+      }, 100);
+    }
   }
+
+  document.addEventListener('astro:after-swap', updateElements)
+  updateElements();
 </script>
