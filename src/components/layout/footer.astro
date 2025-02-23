@@ -2,6 +2,7 @@
 import Github from "@skyfall-powered/simple-icons-astro/Github";
 import X from "@skyfall-powered/simple-icons-astro/X";
 import GitCommitHorizontal from "lucide-astro/GitCommitHorizontal";
+import WebringSwitcher from "./webring-switcher.astro";
 
 import childProcess from "node:child_process";
 
@@ -33,12 +34,7 @@ const message = childProcess
             <div class="px-2">512KB Club</div>
             <div class="bg-blue text-base px-2 rounded-tr rounded-br">Team Blue</div>
         </a>
-        <div id="webring-wrapper">
-            <a href="https://webring.hackclub.com/" id="previousBtn" class="webring-anchor" title="Previous">‹</a>
-            <a href="https://webring.hackclub.com/" class="webring-logo" title="Hack Club Webring"></a>
-            <a href="https://webring.hackclub.com/" id="nextBtn" class="webring-anchor" title="Next">›</a>
-            <script src="https://webring.hackclub.com/embed.min.js"></script>
-        </div>        
+        <WebringSwitcher />
     </div>
     <p>&copy; {new Date().getFullYear()} Mahad Kalam.</p>
     <a href={`https://github.com/SkyfallWasTaken/skyfall-site/commit/${hash}`} target="_blank" class="flex gap-1 justify-center hover:underline my-1">
