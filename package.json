@@ -21,7 +21,6 @@
     "@fontsource-variable/inter": "^5.1.1",
     "@fontsource/fira-code": "^5.1.1",
     "@inox-tools/sitemap-ext": "^0.3.6",
-    "@sentry/astro": "^8.55.0",
     "@skyfall-powered/simple-icons-astro": "^12.4.2",
     "astro": "5.3.0",
     "astro-webmanifest": "^1.0.0",
