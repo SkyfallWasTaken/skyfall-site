@@ -22,3 +22,21 @@ export function getTimeNow() {
     minute: "numeric",
   });
 }
+
+interface Member {
+  name: string;
+  url: string;
+}
+
+export async function getWebring(url: URL) {
+  const response = await fetch("https://webring.hackclub.com/members.json");
+  const members = (await response.json()) as Member[];
+
+  const siteIndex = members.findIndex(member => new URL(member.url).hostname === url.hostname);
+  const previousIndex = (siteIndex - 1 + members.length) % members.length;
+  const nextIndex = (siteIndex + 1) % members.length;
+  const previous = members[previousIndex];
+  const next = members[nextIndex];
+
+  return { previous, next };
+}
