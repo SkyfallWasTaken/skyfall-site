@@ -2,7 +2,6 @@
 import type { CollectionEntry } from "astro:content";
 import "remark-github-blockquote-alert/alert.css";
 
-import Footer from "@components/blog/footer.astro";
 import Card from "@components/ui/card.astro";
 import FormattedDate from "@components/ui/formatted-date.astro";
 import Layout from "./layout.astro";
@@ -49,7 +48,6 @@ const { title, description, pubDate, ogImage, draft } = Astro.props;
       <slot />
     </div>
   </div>
-  <Footer/>
 </Layout>
 
 <style is:global>

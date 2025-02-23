@@ -18,15 +18,27 @@ const message = childProcess
 ---
 
 <hr class="h-px my-8 bg-surface0 border-0"/>
-<div class="w-full text-center flex flex-col justify-center">
+<div class="w-full text-center flex flex-col items-center">
     <a href="https://skyfall.dev/rss.xml" class="text-mauve">Subscribe on RSS</a>
-    <div class="text-mauve justify-center flex my-3 gap-3">
+    <div class="text-mauve justify-center flex mt-3 mb-4 gap-3">
         <a href="https://github.com/SkyfallWasTaken" target="_blank" class="hover:rotate-[-5deg] transition-transform duration-300">
             <Github size={32}/>
         </a>
         <a href="https://x.com/skyfall_ggs" target="_blank" class="hover:rotate-[5deg] transition-transform duration-300">
             <X size={32}/>
         </a>
+    </div>
+    <div class="flex items-center gap-4 mb-4">
+        <a href="https://512kb.club" target="_blank" class="w-fit h-fit border border-px border-overlay0 rounded grid grid-cols-2">
+            <div class="px-2">512KB Club</div>
+            <div class="bg-blue text-base px-2 rounded-tr rounded-br">Team Blue</div>
+        </a>
+        <div id="webring-wrapper">
+            <a href="https://webring.hackclub.com/" id="previousBtn" class="webring-anchor" title="Previous">‹</a>
+            <a href="https://webring.hackclub.com/" class="webring-logo" title="Hack Club Webring" alt="Hack Club Webring"></a>
+            <a href="https://webring.hackclub.com/" id="nextBtn" class="webring-anchor" title="Next">›</a>
+            <script src="https://webring.hackclub.com/embed.min.js"></script>
+        </div>        
     </div>
     <p>&copy; {new Date().getFullYear()} Mahad Kalam.</p>
     <a href={`https://github.com/SkyfallWasTaken/skyfall-site/commit/${hash}`} target="_blank" class="flex gap-1 justify-center hover:underline my-1">

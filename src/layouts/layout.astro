@@ -8,6 +8,7 @@ import "@fontsource-variable/inter";
 import "@fontsource/fira-code";
 
 import Header from "@components/layout/header.astro";
+import Footer from "@components/layout/footer.astro";
 interface Props {
   title: string;
   description?: string;
@@ -66,6 +67,7 @@ const { title, description = SITE_DESCRIPTION, ogImage } = Astro.props;
   >
     <Header />
     <main><slot /></main>
+    <Footer />
 
     {UMAMI_SCRIPT && UMAMI_WEBSITE_ID && (
       <script>
