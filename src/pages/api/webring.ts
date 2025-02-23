@@ -10,3 +10,5 @@ export async function GET(context: APIContext) {
     },
   });
 }
+
+export const prerender = false;
