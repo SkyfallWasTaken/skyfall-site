@@ -40,7 +40,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.13.5",
     "knip": "^5.45.0",
-    "typescript": "~5.7.3"
+    "typescript": "^5.8.2"
   },
   "trustedDependencies": ["@sentry/cli", "esbuild", "sharp"]
 }
