@@ -21,6 +21,7 @@ import Turso from "@skyfall-powered/simple-icons-astro/Turso";
 import Typescript from "@skyfall-powered/simple-icons-astro/Typescript";
 import Vuedotjs from "@skyfall-powered/simple-icons-astro/Vuedotjs";
 import Wakatime from "@skyfall-powered/simple-icons-astro/Wakatime";
+import Loops from "@components/misc/loops-icon.astro";
 
 const { project } = Astro.props as { project: CollectionEntry<"projects"> };
 const image = project.data.smallTileImage || project.data.mainImage;
@@ -40,6 +41,7 @@ const iconMap = {
   Drizzle,
   Turso,
   Wakatime,
+  Loops,
 };
 
 type IconType = keyof typeof iconMap;
