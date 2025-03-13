@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Card from "../ui/card.astro";
 
+import Loops from "@components/misc/loops-icon.astro";
 // Technically, this whole spiel can be replaced with a nice dynamic import.
 // However, this *massively* increases build times because Vite isn't smart enough to
 // know that only the icons that are used in the content files are actually imported,
@@ -21,7 +22,6 @@ import Turso from "@skyfall-powered/simple-icons-astro/Turso";
 import Typescript from "@skyfall-powered/simple-icons-astro/Typescript";
 import Vuedotjs from "@skyfall-powered/simple-icons-astro/Vuedotjs";
 import Wakatime from "@skyfall-powered/simple-icons-astro/Wakatime";
-import Loops from "@components/misc/loops-icon.astro";
 
 const { project } = Astro.props as { project: CollectionEntry<"projects"> };
 const image = project.data.smallTileImage || project.data.mainImage;

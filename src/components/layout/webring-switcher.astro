@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import HcIcon from "@assets/img/hc-icon.svg";
 import { getWebring } from "@/util";
+import HcIcon from "@assets/img/hc-icon.svg";
 
 const { previous: initialPrevious, next: initialNext } = await getWebring(
   Astro.url,
