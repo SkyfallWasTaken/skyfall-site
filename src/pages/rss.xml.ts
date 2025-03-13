@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
 
 export async function GET(context: APIContext) {
+  const blogCollection = await getCollection("blog");
   const posts = blogCollection
     .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
