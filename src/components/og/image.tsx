@@ -6,14 +6,14 @@ export default function (props: CollectionEntry<"blog">) {
     <div tw="flex flex-col w-full h-full pt-16 text-white bg-indigo-600">
       <div tw="flex flex-1 flex-col w-full h-full border-2 px-16 justify-between">
         <div tw="flex flex-col justify-center flex-1">
-          <div tw="flex font-extrabold text-8xl">{props.data.title}</div>
-          <div tw="flex text-4xl tracking-tight mt-8">
+          <h1 tw="flex font-extrabold text-8xl">{props.data.title}</h1>
+          <p tw="flex text-4xl tracking-tight mt-8">
             {props.data.description}
-          </div>
+          </p>
         </div>
-        <div tw="flex items-center text-3xl py-12">
+        <p tw="flex items-center text-3xl py-12">
           {formattedDate(new Date(props.data.pubDate))}
-        </div>
+        </p>
       </div>
     </div>
   );
