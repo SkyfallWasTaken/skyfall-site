@@ -1,23 +1,11 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import OnlineStatus from "@components/home/online-status.astro";
 import BlogPostPreview from "@components/misc/blog-post-preview.astro";
 import ProjectGrid from "@components/misc/project-grid.astro";
-import Button from "@components/ui/button.astro";
-import ChipCircle from "@components/ui/chip-circle.astro";
-import Chip from "@components/ui/chip.astro";
+import Hero from "@components/home/hero.astro";
 import Layout from "@layouts/layout.astro";
-
-import logoImage from "@assets/img/logo.png";
-import AstroIcon from "@skyfall-powered/simple-icons-astro/Astro";
-import RustIcon from "@skyfall-powered/simple-icons-astro/Rust";
-import SvelteIcon from "@skyfall-powered/simple-icons-astro/Svelte";
-import TwIcon from "@skyfall-powered/simple-icons-astro/Tailwindcss";
-import TsIcon from "@skyfall-powered/simple-icons-astro/Typescript";
 import ArrowRightIcon from "lucide-astro/ArrowRight";
-import ClockIcon from "lucide-astro/Clock";
 
 const blogCollection = await getCollection("blog");
 const projectsCollection = await getCollection("projects");
@@ -34,57 +22,7 @@ const pinnedProjects = projectsCollection.filter(
 
 <Layout title="Home">
   <div class="space-y-9">
-    <div class="flex flex-col sm:flex-row items-stretch gap-4">
-      <div id="hero">
-        <div class="mb-2" x-data>
-          <h1 class="text-3xl font-extrabold mb-1">Hey, I'm Mahad! 👋</h1>
-          <p class="mb-0 font-mono tracking-tight opacity-0 transition-opacity duration-200 h-[1.4em]" id="random-quote"></p>
-        </div>
-        <div class="space-y-1 mb-6">
-          <small class="uppercase font-semibold text-overlay2 mb-4"
-            >Technologies</small
-          >
-          <div
-            class="flex gap-4 *:fill-current *:w-8 hover:*:fill-lavender *:transition *:cursor-pointer"
-          >
-            <RustIcon size={32} />
-            <TsIcon size={32} />
-            <SvelteIcon size={32} />
-            <AstroIcon size={32} />
-            <TwIcon size={32} />
-          </div>
-        </div>
-        <div class="flex w-fit gap-2 mb-4">
-          <OnlineStatus server:defer>
-            <Chip slot="fallback">
-              <ChipCircle fill="fill-green" slot="pre" />
-              <span slot="content">Loading...</span>
-            </Chip>
-          </OnlineStatus>
-          <Chip>
-            <ClockIcon class="w-3.5 h-3.5" slot="pre" />
-            <span slot="content" id="current-time">one sec...</span>
-          </Chip>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="/posts">
-            <Button variant="primary" class="w-full">View my blog</Button>
-          </a>
-          <!-- <Button variant="secondary">Check out my projects</Button> -->
-        </div>
-      </div>
-      <div class="hidden sm:block sm:w-1/3 h-full ml-auto">
-        <div class="relative w-full h-full">
-          <Image
-            src={logoImage}
-            loading="eager"
-            alt="Skyfall's logo"
-            class="h-full rounded-md shadow-sm object-cover"
-          />
-        </div>
-      </div>
-    </div>
+    <Hero />
 
     <div class="flex flex-col gap-2.5">
       <div class="flex">
@@ -117,47 +55,3 @@ const pinnedProjects = projectsCollection.filter(
     </div>
   </div>
 </Layout>
-
-<script>
-  import { getTimeNow } from "@/util";
-
-  const day = new Date()
-    .toLocaleDateString(navigator.language, {
-      weekday: "long",
-    })
-    .toLowerCase();
-  const quotes = [
-    "freefalling through the internet",
-    "the internet is a series of tubes",
-    "it's time to build!",
-    "bashing bits and bytes",
-    `enjoy your ${day}!`,
-    `have a great ${day}!`,
-    "code is poetry (well, sometimes)",
-    "it's time to sail the high seas!",
-    "aye aye cap'n!",
-  ];
-
-  function updateElements() {
-    const timeElement = document.getElementById("current-time");
-    if (timeElement) {
-      timeElement.textContent = getTimeNow();
-      setInterval(() => {
-        timeElement.textContent = getTimeNow();
-      }, 1000);
-    }
-
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    const quoteElement = document.getElementById("random-quote");
-    if (quoteElement) {
-      quoteElement.textContent = randomQuote;
-      // Add a small delay before showing the quote to ensure the transition works
-      setTimeout(() => {
-        quoteElement.classList.remove("opacity-0");
-      }, 100);
-    }
-  }
-
-  document.addEventListener('astro:after-swap', updateElements)
-  updateElements();
-</script>
