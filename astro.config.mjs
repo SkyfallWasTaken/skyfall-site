@@ -5,6 +5,7 @@ import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@inox-tools/sitemap-ext";
 import webmanifest from "astro-webmanifest";
+import expressiveCode from "astro-expressive-code";
 
 import vercel from "@astrojs/vercel";
 
@@ -17,6 +18,9 @@ export default defineConfig({
   site: "https://skyfall.dev",
   integrations: [
     tailwind(),
+    expressiveCode({
+      themes: ['catppuccin-macchiato', 'catppuccin-latte'],
+    }),
     mdx(),
     sitemap({
       includeByDefault: true,

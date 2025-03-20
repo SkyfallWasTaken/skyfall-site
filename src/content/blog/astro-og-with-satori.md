@@ -55,7 +55,7 @@ npm install sharp
 
 First, let's create an `OpenGraphImage` component, which will be responsible for rendering the actual content of the OG image. Here's an example:
 
-```tsx
+```tsx title=src/components/og/image.tsx
 // e.g. src/components/og/image.tsx
 import { type CollectionEntry } from "astro:content";
 
@@ -95,7 +95,7 @@ You'll want to move the `[id].astro` file to a new `[id]` folder, rename it to `
 
 This will create a new endpoint at `/blog/[id]/og.png`. Now, let's set it up:
 
-```ts
+```ts title=src/blog/[id]/og.png.ts
 import fs from "fs/promises";
 import satori from "satori";
 import sharp from "sharp";
@@ -136,7 +136,7 @@ and the posts from the `blog` collection.
 
 Now, let's define the `PNG` and `SVG` functions, which will generate the PNG and SVG images respectively:
 
-```ts
+```ts title=src/blog/[id]/og.png.ts
 export async function SVG(component: h.JSX.Element) {
   return await satori(component as any, {
     width: 1200,
@@ -182,7 +182,7 @@ Phew, that's the hard part done! Finally, let's add the OG image to our posts.
 Here's an example. First, let's pass a `ogImage` prop to our `BlogPost` layout, which will use
 our new API endpoint to generate the image for the post.
 
-```astro
+```astro title=src/blog/[id]/index.astro
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
 
@@ -213,7 +213,7 @@ the `Astro.site` variable to get the base URL of our site.
 Now, let's use the `ogImage` prop in our `BlogPost` layout, which will pass in the image URL to the
 root `Layout`.
 
-```astro
+```astro title=src/layouts/blogpost.astro
 ---
 import type { CollectionEntry } from "astro:content";
 
@@ -239,7 +239,7 @@ And finally, let's use the `ogImage` prop in our main layout, by adding a `meta`
 with the image URL. We'll also set the `twitter:card` properties to `summary_large_image`, so our image
 can be shown in full size.
 
-```astro
+```astro title=src/layouts/layout.astro
 ---
 interface Props {
   title: string;
