@@ -4,8 +4,8 @@ import { defineConfig, envField } from "astro/config";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@inox-tools/sitemap-ext";
-import webmanifest from "astro-webmanifest";
 import expressiveCode from "astro-expressive-code";
+import webmanifest from "astro-webmanifest";
 
 import vercel from "@astrojs/vercel";
 
