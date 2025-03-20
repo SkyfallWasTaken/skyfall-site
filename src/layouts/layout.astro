@@ -63,7 +63,7 @@ const { title, description = SITE_DESCRIPTION, ogImage } = Astro.props;
     <ClientRouter transition:animate={fade({ duration: "0.2s" })} />
   </head>
   <body
-    class="bg-base bg-dotted-spacing-8 bg-dotted-gray-800 text-text min-h-screen bg-background font-sans antialiased md:max-w-2xl lg:max-w-[45rem] mx-auto py-6 sm:py-12 px-6"
+    class="bg-base text-text min-h-screen bg-background font-sans antialiased md:max-w-2xl lg:max-w-[45rem] mx-auto py-6 sm:py-12 px-6"
   >
     <Header />
     <main><slot /></main>

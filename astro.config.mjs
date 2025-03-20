@@ -19,7 +19,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     expressiveCode({
-      themes: ['catppuccin-macchiato', 'catppuccin-latte'],
+      themes: ["catppuccin-macchiato", "catppuccin-latte"],
     }),
     mdx(),
     sitemap({
