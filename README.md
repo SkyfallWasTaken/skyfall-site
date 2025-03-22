@@ -1,7 +1,6 @@
 # skyfall.dev
 
-![Screenshot of the site](https://cdn.hack.pet/slackcdn/4cde3d37d983e8fb50c9fae8b841be46.png
-)
+![Screenshot of the site](https://hc-cdn.hel1.your-objectstorage.com/s/v3/e9af1aa28d0d20d3056c281515db1843f43610af_image.png)
 
 ## Features
 
@@ -9,7 +8,7 @@
 
 OG images are automatically generated for blog posts!
 
-![image](https://cloud-qkxfegiat-hack-club-bot.vercel.app/0image.png)
+![image](https://skyfall.dev/posts/astro-og-with-satori/og.png)
 
 ### Discord status & local time
 
@@ -21,7 +20,7 @@ The website fetches my Discord online status and the time in the UK, and shows t
 
 My site has a blogpost feature, powered by Astro Content Collections.
 
-![image](https://cdn.hackclubber.dev/slackcdn/5089b0ff86fb4c6fe62d0493bcd07183.png)
+![image](https://hc-cdn.hel1.your-objectstorage.com/s/v3/e53ec99741f2fd09980a9de55912efc3027aaea9_image.png)
 
 ## Simple Icons fork
 
