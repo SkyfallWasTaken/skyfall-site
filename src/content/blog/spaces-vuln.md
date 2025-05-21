@@ -228,7 +228,7 @@ To Hack Club’s credit, this was fixed surprisingly quickly. Spaces was moved o
 
 - **11/05/2025** at 1:37PM: Spaces team notified
 - **11/05/2025** at 1:50PM: Spaces team confirmed the issue
-- **20/06/2025** at 12:46PM: Spaces v2 released, which uses Piston and thus fixes this vulnerability
+- **20/05/2025** at 12:46PM: Spaces v2 released, which uses Piston and thus fixes this vulnerability
 
 In other words, getting this fixed took just over a week. Nice work!
 
