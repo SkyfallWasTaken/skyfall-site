@@ -26,6 +26,24 @@ The small amount of notice has also been catastrophic for the programs that we r
 
 Anyway, we're moving to Mattermost. This experience has taught us that owning your data is incredibly important, and if you're a small business especially, then I'd advise you move away too.
 
+## Update: We're self-hosting Mattermost!
+
+We've started moving to Mattermost, and we're running it ourselves (ty, AGPLv3). This way, our data belongs to us, and there's no risk of it being taken away. The whole community, including the messages, links, and files, is coming with us, and we're going to keep 11 years of conversations safe. This is a big change, but the right one.  
+
+We're also planning to make Mattermost completely our own: custom clients, themes, bots, features, and more. See some of the hacky stuff we've done here:  
+
+- [Jamcast](https://github.com/jeremy46231/jamcast#jamcast) — share music in a Slack huddle; streams from a cooperative Spotify Jam to a Slack huddle and a higher-quality website  
+- [SlackScan](https://github.com/3kh0/slackscan) — inspired by TgScan; indexes channels and members to show what channels a user is in  
+- [ShipTalkers](https://github.com/SkyfallWasTaken/shiptalkers) — compare Wakatime vs Slack activity  
+- [Fraudpheus](https://github.com/budzioT/fraudpheus) — AI-enhanced support ticket app  
+- [Zeon](https://github.com/NeonGamerBot-QK/slack-zeon) — personal assistant for Slack  
+- [Shrimp Shuffler](https://github.com/hackclub/shrimp-shuffler/) — rotates Slack workspace icons (written in Ruby)  
+- [Prox2](https://github.com/anirudhb/prox2) — anonymous confessions for Slack  
+- [Slack-TUI](https://github.com/espcaa/slack-tui) — terminal-based Slack client  
+- [Lifeboat](https://github.com/hackclub/replit-lifeboat) — export and back up your Repls  
+
+Want to help out? Just [retweet!](https://x.com/arnavcodes/status/1968705010557976663) — it helps a *lot*!  
+
 ---
 
 _This post was rushed out because, well, this has been a shock! If you'd like any additional details then feel free to send me an email._
