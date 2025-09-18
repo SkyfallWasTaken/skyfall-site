@@ -22,6 +22,8 @@ The small amount of notice has also been catastrophic for the programs that we r
 
 <img width="1146" height="134" alt="image" src="https://github.com/user-attachments/assets/dbfc784a-d06b-44d8-a050-ec8c16c5a98b" />
 
+<img width="611" height="274" alt="image" src="https://github.com/user-attachments/assets/8a41302f-2e5f-41c1-933f-d856094c587a" />
+
 Anyway, we're moving to Mattermost. This experience has taught us that owning your data is incredibly important, and if you're a small business especially, then I'd advise you move away too.
 
 ---
