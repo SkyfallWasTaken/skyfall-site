@@ -6,6 +6,18 @@ draft: false
 tags: ["slack", "hackclub"]
 ---
 
+## The good ending
+
+Turns out that this post went pretty viral on [Hacker News](https://news.ycombinator.com/item?id=45283887) and Twitter/X:
+
+<img width="484" height="63" alt="image" src="https://github.com/user-attachments/assets/add9d959-c52c-49d8-8598-296e0111b5f0" />
+
+I'm very happy to announce that a couple hours ago, Slack's CEO got in contact with us and offered to put things right by providing us a 5-year Enterprise (!!) plan, for free! A massive thank you to everyone who helped spread awareness - it was incredibly heartwarming to see so many people support us and help get this sorted.
+
+With that being said though, this ordeal has made us think more deeply about entrusting data with external SaaSes and ensuring that we _own_ our data is definitely going to be a very big priority going forward. I'd encourage you to think the same way!
+
+---
+
 For nearly 11 years, Hack Club - a nonprofit that provides coding education and community to teenagers worldwide - has used Slack as the tool for communication. We weren't freeloaders. A few years ago, when Slack transitioned us from their free nonprofit plan to a $5,000/year arrangement, we happily paid. It was reasonable, and we valued the service they provided to our community.
 
 However, two days ago, Slack reached out to us and said that if we don't agree to pay an extra $50k **this week** and $200k a year, they'll deactivate our Slack workspace and delete all of our message history.
