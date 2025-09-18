@@ -12,7 +12,7 @@ Turns out that this post went pretty viral on [Hacker News](https://news.ycombin
 
 <img width="484" height="63" alt="image" src="https://github.com/user-attachments/assets/add9d959-c52c-49d8-8598-296e0111b5f0" />
 
-I'm very happy to announce that a couple hours ago, Slack's CEO got in contact with us and offered to put things right by providing us a 5-year Enterprise (!!) plan, for free! A massive thank you to everyone who helped spread awareness - it was incredibly heartwarming to see so many people support us and help get this sorted.
+I'm very happy to announce that a couple hours ago, Slack's CEO got in contact with us and offered to put things right (I can't exactly say what it is, but it's better than the plan we were on previously!) A massive thank you to everyone who helped spread awareness - it was incredibly heartwarming to see so many people support us and help get this sorted.
 
 With that being said though, this ordeal has made us think more deeply about entrusting data with external SaaSes and ensuring that we _own_ our data is definitely going to be a very big priority going forward. I'd encourage you to think the same way!
 
