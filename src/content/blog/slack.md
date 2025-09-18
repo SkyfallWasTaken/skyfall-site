@@ -2,7 +2,7 @@
 title: "Slack is extorting us with a $195k/yr bill increase"
 description: "An open letter, or something"
 pubDate: "September 18, 2025 18:00"
-draft: true
+draft: false
 tags: ["slack", "hackclub"]
 ---
 
