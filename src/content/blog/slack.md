@@ -1,7 +1,7 @@
 ---
 title: "Slack is extorting us with a $195k/yr bill increase"
 description: "An open letter, or something"
-pubDate: "May 21, 2025 18:00"
+pubDate: "September 18, 2025 18:00"
 draft: true
 tags: ["slack", "hackclub"]
 ---
@@ -10,7 +10,9 @@ For nearly 11 years, Hack Club - a nonprofit that provides coding education and 
 
 However, two days ago, Slack reached out to us and said that if we don't agree to pay an extra $50k **this week** and $200k a year, they'll deactivate our Slack workspace and delete all of our message history.
 
-One could argue that Slack is free to stop providing us the nonprofit offer at any time, but in my opinion, a six month grace period is the _bare minimum_ for a massive hike like this, if not more. Essentially, Salesforce (a **$230 billion** company) is strong-arming a small nonprofit for teens, by providing less than a week to pony up a pretty massive sum of money, or risk cutting off communications with the 60k+ teens in the workspace. That's absurd.
+One could argue that Slack is free to stop providing us the nonprofit offer at any time, but in my opinion, a six month grace period is the _bare minimum_ for a massive hike like this, if not more. Essentially, Salesforce (a **$230 billion** company) is strong-arming a small nonprofit for teens, by providing less than a week to pony up a pretty massive sum of money, or risk cutting off all our communications. That's absurd.
+
+## The impact
 
 The small amount of notice has also been catastrophic for the programs that we run. Dozens of our staff and volunteers are now scrambling to update systems, rebuild integrations and migrate _years_ of institutional knowledge. The opportunity cost of this forced migration is simply staggering.
 
@@ -18,6 +20,10 @@ The small amount of notice has also been catastrophic for the programs that we r
 
 <img width="1146" height="103" alt="image" src="https://github.com/user-attachments/assets/f09902a1-42cb-4cd7-9a32-21cdbfb3fd05" />
 
-<img width="906" height="86" alt="image" src="https://github.com/user-attachments/assets/f9bfea8c-4182-4ad4-a019-d5ec57a4402d" />
+<img width="1146" height="134" alt="image" src="https://github.com/user-attachments/assets/dbfc784a-d06b-44d8-a050-ec8c16c5a98b" />
 
 Anyway, we're moving to Mattermost. This experience has taught us that owning your data is incredibly important, and if you're a small business especially, then I'd advise you move away too.
+
+---
+
+_This post was rushed out because, well, this has been a shock! If you'd like any additional details then feel free to send me an email._
