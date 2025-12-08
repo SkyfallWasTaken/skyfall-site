@@ -22,6 +22,9 @@ import Turso from "@skyfall-powered/simple-icons-astro/Turso";
 import Typescript from "@skyfall-powered/simple-icons-astro/Typescript";
 import Vuedotjs from "@skyfall-powered/simple-icons-astro/Vuedotjs";
 import Wakatime from "@skyfall-powered/simple-icons-astro/Wakatime";
+import Docker from "@skyfall-powered/simple-icons-astro/Docker";
+import Bun from "@skyfall-powered/simple-icons-astro/Bun";
+import Postgresql from "@skyfall-powered/simple-icons-astro/Postgresql";
 
 const { project } = Astro.props as { project: CollectionEntry<"projects"> };
 const image = project.data.smallTileImage || project.data.mainImage;
@@ -42,6 +45,9 @@ const iconMap = {
   Turso,
   Wakatime,
   Loops,
+  Docker,
+  Bun,
+  Postgresql,
 };
 
 type IconType = keyof typeof iconMap;
