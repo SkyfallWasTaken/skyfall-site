@@ -21,6 +21,20 @@ const { title, description, pubDate, ogImage, draft } = Astro.props;
       </h1>
     </div>
 
+    {
+      draft && (
+        <div class="mt-6">
+          <Card border="border-yellow-500 bg-yellow-500/10" bg="bg-base">
+            <h2 class="text-xl font-bold">This is a draft post!</h2>
+            <p class="leading-tight text-sm">
+              It may have typos, unfinished sections, or inaccuracies. Please
+              don't share it until it's been published!
+            </p>
+          </Card>
+        </div>
+      )
+    }
+
     <!-- Article content -->
     <div class="prose prose-custom w-full max-w-full">
       <slot />
@@ -64,20 +78,6 @@ const { title, description, pubDate, ogImage, draft } = Astro.props;
         </a>
       </div>
     </footer>
-
-    {
-      draft && (
-        <div class="mt-6">
-          <Card border="border-yellow-500 bg-yellow-500/10" bg="bg-base">
-            <h2 class="text-xl font-bold">This is a draft post!</h2>
-            <p class="leading-tight text-sm">
-              It may have typos, unfinished sections, or inaccuracies. Please
-              don't share it until it's been published!
-            </p>
-          </Card>
-        </div>
-      )
-    }
   </article>
 </Layout>
 
