@@ -47,4 +47,4 @@ Disallow: /
 User-Agent: *
 Allow: /
 
-Sitemap: https://skyfall.dev/sitemap-index.xml
+Sitemap: https://mahadk.com/sitemap-index.xml

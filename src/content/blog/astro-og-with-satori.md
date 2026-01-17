@@ -271,4 +271,4 @@ const { title, description, ogImage } = Astro.props;
 And that's it! You should now have an OG image for your blog posts! Here's an example of what my
 blog's OG images look like:
 
-![OG image for the blog post "How to use Satori with your Tailwind config"](https://skyfall.dev/posts/astro-og-with-satori/og.png)
+![OG image for the blog post "How to use Satori with your Tailwind config"](https://mahadk.com/posts/astro-og-with-satori/og.png)

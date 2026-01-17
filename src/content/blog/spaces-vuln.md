@@ -76,7 +76,7 @@ def run_python(site_id):
                         'error': True
                     }), 
         except:
-	          print("Error") # abbreviated
+           print("Error") # abbreviated
 ```
 
 Wait, *what?*
@@ -166,7 +166,7 @@ except TimeoutError as e:
     return jsonify({'output': str(e), 'error': True}), 400
 except Exception as e:
     error_type = type(e).__name__
-		# ...
+  # ...
 finally:
     sys.stdout = old_stdout
 ```
@@ -234,4 +234,4 @@ In other words, getting this fixed took just over a week. Nice work!
 
 ---
 
-Thanks for making it to the end of this blog post! Check out [my other posts](https://skyfall.dev/posts) if you’d like to see what else I’ve written :)
+Thanks for making it to the end of this blog post! Check out [my other posts](https://mahadk.com/posts) if you’d like to see what else I’ve written :)

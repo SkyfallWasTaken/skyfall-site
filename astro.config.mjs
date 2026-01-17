@@ -16,7 +16,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "./src/constants";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://skyfall.dev",
+  site: "https://mahadk.com",
   integrations: [
     expressiveCode({
       themes: ["catppuccin-macchiato", "catppuccin-latte"],

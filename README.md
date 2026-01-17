@@ -1,4 +1,4 @@
-# skyfall.dev
+# mahadk.com
 
 ![Screenshot of the site](https://hc-cdn.hel1.your-objectstorage.com/s/v3/e9af1aa28d0d20d3056c281515db1843f43610af_image.png)
 
@@ -8,7 +8,7 @@
 
 OG images are automatically generated for blog posts!
 
-![image](https://skyfall.dev/posts/astro-og-with-satori/og.png)
+![image](https://mahadk.com/posts/astro-og-with-satori/og.png)
 
 ### Discord status & local time
 

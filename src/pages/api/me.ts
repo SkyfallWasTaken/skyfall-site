@@ -5,7 +5,7 @@ export async function GET() {
       state: "N/A",
       country: "GB",
       slack_id: "U059VC0UDEU",
-      extra: "check me out at https://skyfall.dev!",
+      extra: "check me out at https://mahadk.com!",
     }),
     {
       headers: {
