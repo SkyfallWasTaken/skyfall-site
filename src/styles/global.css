@@ -2,10 +2,12 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: "IBM Plex Sans Variable", ui-sans-serif, system-ui, sans-serif,
+  --font-sans:
+    "IBM Plex Sans Variable", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono:
+    "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 
   --font-size-base: 1.125rem; /* 18px */
   --line-height-base: 1.75rem; /* 28px */
@@ -48,15 +50,14 @@
   --color-muted: rgb(159, 176, 166);
   --color-subtext0: rgb(159, 176, 166);
   --color-subtext1: rgb(198, 209, 204);
-  --color-headings: rgb(232, 240, 237);
 }
 
 @utility prose-custom {
   --tw-prose-body: var(--color-text);
-  --tw-prose-headings: var(--color-headings);
+  --tw-prose-headings: var(--color-text);
   --tw-prose-lead: var(--color-text);
   --tw-prose-links: var(--color-accent);
-  --tw-prose-bold: var(--color-headings);
+  --tw-prose-bold: var(--color-text);
   --tw-prose-counters: var(--color-accent);
   --tw-prose-bullets: var(--color-accent);
   --tw-prose-hr: var(--color-surface1);
