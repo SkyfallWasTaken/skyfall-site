@@ -8,7 +8,7 @@ import webmanifest from "astro-webmanifest";
 
 import vercel from "@astrojs/vercel";
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
 
 import { remarkAlert } from "remark-github-blockquote-alert";
 
@@ -49,7 +49,7 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
 
   env: {

@@ -10,8 +10,11 @@ import Loops from "@components/misc/loops-icon.astro";
 // so it has to import them all. This is *slow!*
 import Airtable from "@skyfall-powered/simple-icons-astro/Airtable";
 import AstroIcon from "@skyfall-powered/simple-icons-astro/Astro";
+import Bun from "@skyfall-powered/simple-icons-astro/Bun";
+import Docker from "@skyfall-powered/simple-icons-astro/Docker";
 import Drizzle from "@skyfall-powered/simple-icons-astro/Drizzle";
 import Playwright from "@skyfall-powered/simple-icons-astro/Playwright";
+import Postgresql from "@skyfall-powered/simple-icons-astro/Postgresql";
 import React from "@skyfall-powered/simple-icons-astro/React";
 import Reactrouter from "@skyfall-powered/simple-icons-astro/Reactrouter";
 import Rust from "@skyfall-powered/simple-icons-astro/Rust";
@@ -22,9 +25,6 @@ import Turso from "@skyfall-powered/simple-icons-astro/Turso";
 import Typescript from "@skyfall-powered/simple-icons-astro/Typescript";
 import Vuedotjs from "@skyfall-powered/simple-icons-astro/Vuedotjs";
 import Wakatime from "@skyfall-powered/simple-icons-astro/Wakatime";
-import Docker from "@skyfall-powered/simple-icons-astro/Docker";
-import Bun from "@skyfall-powered/simple-icons-astro/Bun";
-import Postgresql from "@skyfall-powered/simple-icons-astro/Postgresql";
 
 const { project } = Astro.props as { project: CollectionEntry<"projects"> };
 const image = project.data.smallTileImage || project.data.mainImage;
