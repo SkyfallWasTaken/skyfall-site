@@ -8,24 +8,39 @@ import { DISCORD_USER_ID } from "astro:env/client";
   <div class="w-full max-w-full">
     <div class="mt-10 mb-6">
       <h1 class="text-4xl font-extrabold mb-2">Contact</h1>
-      <p>Want to get in touch? Here are some ways to reach me:</p>
+      <p>
+        If you'd like to get in touch or just say hello, here's a few ways to do
+        so:
+      </p>
     </div>
 
     <div class="prose prose-custom mt-10 mb-6">
       <ul>
         <li>
-          <a href="mailto:hey@mahadk.com">Email</a> – <a
-            href="mailto:hey@mahadk.com"><b>hey@mahadk.com</b></a
+          <b>By email:</b> – <a href="mailto:hey@mahadk.com"
+            ><b>hey@mahadk.com</b></a
           >
         </li>
         <li>
-          <a href="https://github.com/skyfallwastaken">GitHub</a> – SkyfallWasTaken
+          <b>GitHub:</b> – <a href="https://github.com/SkyfallWasTaken"
+            >github.com/SkyfallWasTaken</a
+          >
         </li>
         <li>
-          <a href={`https://discord.com/users/${DISCORD_USER_ID}`}>Discord</a> – @skyfallpowered
+          <b>On Discord:</b> –
+          <a href={`https://discord.com/users/${DISCORD_USER_ID}`}
+            >@skyfallpowered</a
+          >
+          <br />
+          <small class="text-muted"
+            >Note that I don't check Discord often - if you need a quick
+            response, email is best.</small
+          >
         </li>
         <li>
-          <a href="https://x.com/skyfall_ggs">Twitter/X</a> – @skyfall_ggs
+          <b>On Twitter/X:</b> – <a href="https://x.com/skyfall_ggs"
+            ><b>@skyfall_ggs</b></a
+          >
         </li>
       </ul>
     </div>
