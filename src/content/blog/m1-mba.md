@@ -37,7 +37,7 @@ A lot of games don't support macOS natively (and only support Windows), but you 
 
 **Minecraft** with the Fabulously Optimized modpack runs at about 60-80 FPS with the default settings, which isn't incredible, but it's still pretty playable.
 
-![Screenshot of Minecraft](@assets/posts/m1-mba/mc.png)
+![Screenshot of Minecraft](@assets/posts/m1-mba/mc.jpeg)
 
 Games that block Wine, such as **Fortnite**, **Fall Guys**, and **Destiny 2** will **not** ever work, unless the devs behind the games enable Wine support for their anti-cheats (and for Epic Games especially, don't hold your breath). Sites like [ProtonDB](https://www.protondb.com/) can help you see if the game you want to play will work.
 

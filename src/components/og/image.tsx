@@ -3,7 +3,7 @@ import { formattedDate } from "../../util";
 
 export default function (props: CollectionEntry<"blog">) {
   return (
-    <div tw="flex flex-col w-full h-full pt-16 text-white bg-indigo-600">
+    <div tw="flex flex-col w-full h-full pt-16 text-[#c6d1cc] bg-[#191c1a]">
       <div tw="flex flex-1 flex-col w-full h-full border-2 px-16 justify-between">
         <div tw="flex flex-col gap-6 justify-center flex-1">
           <div tw="flex font-extrabold text-8xl">{props.data.title}</div>
