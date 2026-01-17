@@ -2,6 +2,10 @@
 title: Using the M1 MacBook Air in 2026
 description: It's surprisingly capable more than five years later — as long as you temper your expectations.
 pubDate: 2026-01-17
+tags:
+- macos
+- macbook
+- apple
 draft: true
 ---
 
