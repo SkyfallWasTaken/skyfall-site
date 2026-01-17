@@ -13,41 +13,72 @@ const { title, description, pubDate, ogImage, draft } = Astro.props;
 ---
 
 <Layout title={title} description={description} ogImage={ogImage}>
-  <div class="mt-10 w-full">
-    <div class="text-center">
-      <!-- Title, date and description -->
-      <div class="not-prose w-full space-y-6">
-        <div class="space-y-2">
-          <h1 class="text-4xl w-full font-bold tracking-[-0.0125em] text-text">
-            {title}
-          </h1>
-          <p class="text-xl text-text/90 leading-relaxed">{description}</p>
-        </div>
-        <div class="text-text/85 font-medium">
-          <FormattedDate date={pubDate} />
-        </div>
-        {
-          draft && (
-            <div class="mt-4 text-left max-w-full">
-              <Card border="border-yellow-500 bg-yellow-500/10" bg="bg-base">
-                <h2 class="text-xl font-bold">This is a draft post!</h2>
-                <p class="leading-tight text-sm">
-                  It may have typos, unfinished sections, or inaccuracies.
-                  Please don't share it until it's been published!
-                </p>
-              </Card>
-            </div>
-          )
-        }
-      </div>
+  <article class="mt-8 w-full">
+    <!-- Title -->
+    <div class="not-prose w-full mb-6">
+      <h1 class="text-4xl font-bold tracking-tight text-headings leading-tight">
+        {title}
+      </h1>
     </div>
 
-    <hr class="h-px my-8 bg-surface0 border-0" />
-
-    <div class="prose w-full max-w-full">
+    <!-- Article content -->
+    <div class="prose prose-custom w-full max-w-full">
       <slot />
     </div>
-  </div>
+
+    <!-- Footer meta -->
+    <footer
+      class="not-prose mt-10 pt-6 border-t border-surface0 text-muted space-y-2"
+    >
+      <div class="flex items-center gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="16"
+          width="18"
+          viewBox="0 0 576 512"
+          fill="currentColor"
+        >
+          <path
+            d="M128 0c13.3 0 24 10.7 24 24V64H296V24c0-13.3 10.7-24 24-24s24 10.7 24 24V64h40c35.3 0 64 28.7 64 64v16 48H400 384 48V448c0 8.8 7.2 16 16 16H262.5l-5.1 20.2c-2.3 9.4-1.8 19 1.4 27.8H64c-35.3 0-64-28.7-64-64V192 144 128C0 92.7 28.7 64 64 64h40V24c0-13.3 10.7-24 24-24zm-8 256H296c13.3 0 24 10.7 24 24s-10.7 24-24 24H120c-13.3 0-24-10.7-24-24s10.7-24 24-24zM96 376c0-13.3 10.7-24 24-24H232c13.3 0 24 10.7 24 24s-10.7 24-24 24H120c-13.3 0-24-10.7-24-24z"
+          ></path>
+        </svg>
+        <FormattedDate date={pubDate} />
+      </div>
+      <div>
+        <a
+          class="flex items-center gap-2 text-accent hover:text-accent-dim transition"
+          href="/posts"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="16"
+            width="16"
+            viewBox="0 0 512 512"
+            fill="currentColor"
+          >
+            <path
+              d="M48 256a208 208 0 1 1 416 0A208 208 0 1 1 48 256zm464 0A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM223 151l-88 88c-9.4 9.4-9.4 24.6 0 33.9l88 88c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47L360 280c13.3 0 24-10.7 24-24s-10.7-24-24-24l-150.1 0 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0z"
+            ></path>
+          </svg>
+          Back to all blog posts
+        </a>
+      </div>
+    </footer>
+
+    {
+      draft && (
+        <div class="mt-6">
+          <Card border="border-yellow-500 bg-yellow-500/10" bg="bg-base">
+            <h2 class="text-xl font-bold">This is a draft post!</h2>
+            <p class="leading-tight text-sm">
+              It may have typos, unfinished sections, or inaccuracies. Please
+              don't share it until it's been published!
+            </p>
+          </Card>
+        </div>
+      )
+    }
+  </article>
 </Layout>
 
 <style is:global>
@@ -60,7 +91,7 @@ const { title, description, pubDate, ogImage, draft } = Astro.props;
   }
 
   .prose .markdown-alert p:last-child {
-    margin: 0!important;
+    margin: 0 !important;
   }
 
   /* .prose

@@ -18,29 +18,51 @@ const message = childProcess
   .trim();
 ---
 
-<hr class="h-px my-8 bg-surface0 border-0"/>
+<hr class="h-px my-8 bg-surface0 border-0" />
 <div class="w-full text-center flex flex-col items-center">
-    <a href="https://skyfall.dev/rss.xml" class="text-mauve">Subscribe on RSS</a>
-    <div class="text-mauve justify-center flex mt-3 mb-4 gap-3">
-        <a href="https://github.com/SkyfallWasTaken" target="_blank" class="hover:rotate-[-5deg] transition-transform duration-300">
-            <Github size={32}/>
-        </a>
-        <a href="https://x.com/skyfall_ggs" target="_blank" class="hover:rotate-[5deg] transition-transform duration-300">
-            <X size={32}/>
-        </a>
-    </div>
-    <div class="flex items-center gap-4 mb-4">
-        <a href="https://512kb.club" target="_blank" class="w-fit h-fit border border-px border-overlay0 rounded grid grid-cols-2">
-            <div class="px-2">512KB Club</div>
-            <div class="bg-blue text-base px-2 rounded-tr rounded-br">Team Blue</div>
-        </a>
-        <WebringSwitcher />
-    </div>
-    <p>&copy; {new Date().getFullYear()} Mahad Kalam.</p>
-    <a href={`https://github.com/SkyfallWasTaken/skyfall-site/commit/${hash}`} target="_blank" class="flex gap-1 justify-center hover:underline my-1">
-        <span class="text-mauve">
-            <GitCommitHorizontal />
-        </span>
-        {message} <span class="text-mauve">({hash})</span>
+  <a
+    href="https://skyfall.dev/rss.xml"
+    class="text-accent font-medium underline mb-2">Subscribe on RSS</a
+  >
+  <div class="justify-center flex mt-3 mb-4 gap-3">
+    <a
+      href="https://github.com/SkyfallWasTaken"
+      target="_blank"
+      class="hover:rotate-[-5deg] transition-transform duration-300"
+    >
+      <Github size={32} />
     </a>
+    <a
+      href="https://x.com/skyfall_ggs"
+      target="_blank"
+      class="hover:rotate-[5deg] transition-transform duration-300"
+    >
+      <X size={32} />
+    </a>
+  </div>
+  <p>&copy; {new Date().getFullYear()} Mahad Kalam.</p>
+  <a
+    href={`https://github.com/SkyfallWasTaken/skyfall-site/commit/${hash}`}
+    target="_blank"
+    class="flex gap-1 justify-center hover:underline my-1 text-muted text-xs"
+  >
+    <span>
+      <GitCommitHorizontal />
+    </span>
+    {message}
+    <span class="text-accent">({hash})</span>
+  </a>
+  <div class="flex items-center gap-4 mb-4">
+    <a
+      href="https://512kb.club"
+      target="_blank"
+      class="w-fit h-fit border border-px border-overlay0 rounded grid grid-cols-2"
+    >
+      <div class="px-2">512KB Club</div>
+      <div class="bg-blue-400 text-base px-2 rounded-tr rounded-br">
+        Team Blue
+      </div>
+    </a>
+    <WebringSwitcher />
+  </div>
 </div>

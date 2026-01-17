@@ -1,5 +1,4 @@
 ---
-import Card from "@components/ui/card.astro";
 import Layout from "@layouts/layout.astro";
 
 import { DISCORD_USER_ID } from "astro:env/client";
@@ -7,48 +6,28 @@ import { DISCORD_USER_ID } from "astro:env/client";
 
 <Layout title="Contact">
   <div class="w-full max-w-full">
-    <div class="prose mt-10 mb-6">
-      <h1>Contact</h1>
+    <div class="mt-10 mb-6">
+      <h1 class="text-4xl font-extrabold mb-2">Contact</h1>
+      <p>Want to get in touch? Here are some ways to reach me:</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <a href="mailto:hi@skyfall.dev">
-        <Card>
-          <h2 class="text-xl font-semibold">Email</h2>
-          hi@skyfall.dev
-        </Card>
-      </a>
-      <a href="https://github.com/skyfallwastaken">
-        <Card>
-          <h2 class="text-xl font-semibold">GitHub</h2>
-          SkyfallWasTaken
-        </Card>
-      </a>
-      <a href={`https://discord.com/users/${DISCORD_USER_ID}`}>
-        <Card>
-          <h2 class="text-xl font-semibold">Discord</h2>
-          @justhypex
-        </Card>
-      </a>
-      <a href="https://bsky.app/profile/skyfall.dev">
-        <Card>
-          <h2 class="text-xl font-semibold">Bluesky</h2>
-          @skyfall.dev
-        </Card>
-      </a>
-      <a href="https://x.com/skyfall_ggs">
-        <Card>
-          <h2 class="text-xl font-semibold">Twitter/X</h2>
-          @skyfall_ggs
-        </Card>
-      </a>
-      <a href="https://hackclub.slack.com/team/U059VC0UDEU">
-        <Card>
-          <h2 class="text-xl font-semibold">Hack Club Slack</h2>
-          <span>@skyfall</span>
-          <p class="opacity-50">Open to teenagers only</p>
-        </Card>
-      </a>
+    <div class="prose prose-custom mt-10 mb-6">
+      <ul>
+        <li>
+          <a href="mailto:hey@mahadk.com">Email</a> – <a
+            href="mailto:hey@mahadk.com"><b>hey@mahadk.com</b></a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/skyfallwastaken">GitHub</a> – SkyfallWasTaken
+        </li>
+        <li>
+          <a href={`https://discord.com/users/${DISCORD_USER_ID}`}>Discord</a> – @skyfallpowered
+        </li>
+        <li>
+          <a href="https://x.com/skyfall_ggs">Twitter/X</a> – @skyfall_ggs
+        </li>
+      </ul>
     </div>
   </div>
 </Layout>

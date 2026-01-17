@@ -1,13 +1,18 @@
 ---
-const { bg = "bg-surface0", border = "border-surface1" } = Astro.props as {
+const {
+  bg = "bg-surface0",
+  border = "border-surface1",
+  class: className = "",
+} = Astro.props as {
   bg: string;
   border: string;
+  class: string;
 };
 ---
 
 <div
-  class=`flex flex-col p-4 ${bg} hover:brightness-[110%] transition
-${border} hover:text-subtext1 border rounded-lg shadow-sm`
+  class=`flex flex-col p-4 ${bg} transition
+${border} hover:text-subtext1 border rounded-lg shadow-sm ${className}`
 >
   <slot />
 </div>

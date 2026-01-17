@@ -8,7 +8,7 @@ const { post } = Astro.props as { post: CollectionEntry<"blog"> };
 
 <li>
   <a href=`/posts/${post.id}`>
-    <Card>
+    <Card class="hover:brightness-110 transition">
       <article>
         <small class="flex items-center gap-2">
           {

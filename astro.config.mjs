@@ -2,12 +2,13 @@
 import { defineConfig, envField } from "astro/config";
 
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
 import sitemap from "@inox-tools/sitemap-ext";
 import expressiveCode from "astro-expressive-code";
 import webmanifest from "astro-webmanifest";
 
 import vercel from "@astrojs/vercel";
+
+import tailwindcss from '@tailwindcss/vite';
 
 import { remarkAlert } from "remark-github-blockquote-alert";
 
@@ -17,7 +18,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "./src/constants";
 export default defineConfig({
   site: "https://skyfall.dev",
   integrations: [
-    tailwind(),
     expressiveCode({
       themes: ["catppuccin-macchiato", "catppuccin-latte"],
     }),
@@ -46,6 +46,10 @@ export default defineConfig({
       },
     },
     remarkPlugins: [remarkAlert],
+  },
+
+  vite: {
+    plugins: [tailwindcss()]
   },
 
   env: {

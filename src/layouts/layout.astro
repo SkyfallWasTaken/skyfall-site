@@ -4,8 +4,10 @@ import { ClientRouter } from "astro:transitions";
 import { fade } from "astro:transitions";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
 
-import "@fontsource-variable/inter";
+import "@fontsource-variable/ibm-plex-sans";
 import "@fontsource/fira-code";
+
+import "@/styles/global.css";
 
 import Footer from "@components/layout/footer.astro";
 import Header from "@components/layout/header.astro";
@@ -63,7 +65,8 @@ const { title, description = SITE_DESCRIPTION, ogImage } = Astro.props;
     <ClientRouter transition:animate={fade({ duration: "0.2s" })} />
   </head>
   <body
-    class="bg-base text-text min-h-screen bg-background font-sans antialiased md:max-w-2xl lg:max-w-[45rem] mx-auto py-6 sm:py-12 px-6"
+    class="bg-base text-text min-h-screen bg-background font-sans antialiased md:max-w-2xl lg:max-w-180 mx-auto py-6 sm:py-12 px-6"
+    style="line-height:27px;"
   >
     <Header />
     <main><slot /></main>

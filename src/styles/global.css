@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans:
+    "IBM Plex Sans Variable", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  --font-size-base: 1.125rem; /* 18px */
+  --line-height-base: 1.75rem; /* 28px */
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  }
+
+  --animate-slide-down: slide-down 0.2s ease-out;
+  --animate-slide-up: slide-up 0.15s ease-in;
+}
+
+@theme {
+  --color-base: rgb(25, 28, 26);
+  --color-text: rgb(198, 209, 204);
+  --color-surface0: rgb(44, 49, 46);
+  --color-surface1: rgb(60, 64, 62);
+  --color-surface2: rgb(42, 45, 43);
+  --color-accent: rgb(125, 211, 163);
+  --color-accent-dim: rgb(95, 184, 130);
+  --color-link: rgb(125, 211, 163);
+  --color-muted: rgb(159, 176, 166);
+  --color-subtext0: rgb(159, 176, 166);
+  --color-subtext1: rgb(198, 209, 204);
+  --color-headings: rgb(232, 240, 237);
+}
+
+@utility prose-custom {
+  --tw-prose-body: var(--color-text);
+  --tw-prose-headings: var(--color-headings);
+  --tw-prose-lead: var(--color-text);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-headings);
+  --tw-prose-counters: var(--color-accent);
+  --tw-prose-bullets: var(--color-accent);
+  --tw-prose-hr: var(--color-surface1);
+  --tw-prose-quotes: #a8bcb3;
+  --tw-prose-quote-borders: var(--color-accent);
+  --tw-prose-captions: var(--color-muted);
+  --tw-prose-code: var(--color-accent);
+  --tw-prose-pre-code: var(--color-text);
+  --tw-prose-pre-bg: #0f110f;
+  --tw-prose-th-borders: var(--color-surface1);
+  --tw-prose-td-borders: var(--color-surface2);
+  --tw-prose-invert-body: var(--color-text);
+  --tw-prose-invert-headings: #ffffff;
+  --tw-prose-invert-lead: var(--color-text);
+  --tw-prose-invert-links: var(--color-accent);
+  --tw-prose-invert-bold: #ffffff;
+  --tw-prose-invert-counters: var(--color-accent);
+  --tw-prose-invert-bullets: var(--color-accent);
+  --tw-prose-invert-hr: var(--color-surface1);
+  --tw-prose-invert-quotes: #a8bcb3;
+  --tw-prose-invert-quote-borders: var(--color-accent);
+  --tw-prose-invert-captions: var(--color-muted);
+  --tw-prose-invert-code: var(--color-accent);
+  --tw-prose-invert-pre-code: var(--color-text);
+  --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
+  --tw-prose-invert-th-borders: var(--color-surface1);
+  --tw-prose-invert-td-borders: var(--color-surface2);
+}
+
+@layer base {
+  html {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+  }
+
+  /* Remove default quote marks from blockquotes */
+  .prose blockquote p:first-of-type::before,
+  .prose blockquote p:first-of-type::after {
+    content: none;
+  }
+}

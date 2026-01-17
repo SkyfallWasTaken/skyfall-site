@@ -60,13 +60,13 @@ const icons = project.data.tools.map((tool) => {
 ---
 
 <li class="flex">
-  <Card>
-    <!-- FIXME: Add popup -->
-    <a
-      href={project.data.url}
-      target="_blank"
-      class="group block leading-tight"
-    >
+  <a
+    href={project.data.url}
+    target="_blank"
+    class="block leading-tight hover:brightness-110 transition"
+  >
+    <Card class="group flex flex-col h-full">
+      <!-- FIXME: Add popup -->
       <div class="relative aspect-video overflow-hidden rounded-lg mb-4">
         <Image
           src={image}
@@ -88,6 +88,6 @@ const icons = project.data.tools.map((tool) => {
           {icons.map((Icon) => Icon && <Icon size={24} />)}
         </div>
       </div>
-    </a>
-  </Card>
+    </Card>
+  </a>
 </li>

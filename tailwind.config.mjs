@@ -1,4 +1,3 @@
-import catppuccin from "@catppuccin/tailwindcss";
 import typography from "@tailwindcss/typography";
 import defaultTheme from "tailwindcss/defaultTheme";
 
@@ -74,9 +73,9 @@ export default {
     },
   },
   plugins: [
-    catppuccin({
-      defaultFlavour: "mocha",
-    }),
+    // catppuccin({
+    //   defaultFlavour: "mocha",
+    // }),
     typography,
   ],
 };

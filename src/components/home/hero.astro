@@ -1,54 +1,22 @@
 ---
-import { Image } from "astro:assets";
-
-import OnlineStatus from "@components/home/online-status.astro";
-import ChipCircle from "@components/ui/chip-circle.astro";
-import Chip from "@components/ui/chip.astro";
-
-import logoImage from "@assets/img/logo.png";
-import ClockIcon from "lucide-astro/Clock";
+import { getTimeNow } from "@/util";
 ---
 
-<div
-  class="flex flex-col sm:flex-row items-stretch gap-7 bg-surface0 text-text rounded-lg border-mantle border px-6 py-8 transition"
->
-  <div id="main-hero" class="flex flex-col gap-4">
-    <div class="space-y-2">
-      <h1 class="text-3xl font-extrabold mb-1">Hey, I'm Mahad! 👋</h1>
-      <p>Nice to meet you! I'm a software engineer based in the UK.</p>
-      <p>
-        I love making cool experiences and technology that people actually like
-        to use.
-      </p>
-      <p>
-        When I'm not coding, I like reading, music, gaming, and playing
-        Geoguessr, although I'm not exactly good at it :)
-      </p>
-    </div>
-  </div>
-  <div class="hidden sm:block sm:w-3/5 h-full ml-auto">
-    <div class="relative w-full flex-col gap-4 flex justify-center h-full">
-      <Image
-        src={logoImage}
-        loading="eager"
-        alt="Skyfall's logo"
-        class="h-full rounded-md shadow-sm object-cover"
-      />
-
-      <div class="flex justify-center w-full gap-2 mb-4">
-        <OnlineStatus server:defer>
-          <Chip slot="fallback">
-            <ChipCircle fill="fill-green" slot="pre" />
-            <span slot="content">Loading...</span>
-          </Chip>
-        </OnlineStatus>
-        <Chip>
-          <ClockIcon class="w-3.5 h-3.5" slot="pre" />
-          <span slot="content" id="current-time">one sec...</span>
-        </Chip>
-      </div>
-    </div>
-  </div>
+<div class="space-y-2 my-12">
+  <h1 class="text-3xl font-extrabold mb-2">Hey, I'm Mahad! 👋</h1>
+  <p>Nice to meet you! I'm a 17-year-old software engineer based in the UK.</p>
+  <p>
+    I love making cool experiences and technology that people actually like to
+    use.
+  </p>
+  <p>
+    When I'm not coding, I like reading, music, gaming, and Geocaching when I'm
+    outdoors.
+  </p>
+  <p>
+    At the moment, it's <b id="current-time">{getTimeNow()}</b> in the UK (where I
+    live).
+  </p>
 </div>
 
 <script>
