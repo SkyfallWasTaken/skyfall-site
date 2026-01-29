@@ -56,3 +56,7 @@ I'm angry at the sheer *wastefulness* of the UK Government here. Our public serv
 I'm also angry that the small webdev businesses we have here in the UK were left out of this - for less than 5% of the cost, we'd have a *better* website and help out small businesses who actually care about their work, instead of handing the project to a multinational company that made nearly $60 billion in revenue in a year and has zero qualms about ripping off the British taxpayer.
 
 Do better.
+
+---
+
+A reader sent me another ["AI Delivery"](https://delivery.ai.gov.uk/) site from the government, that was also AI generated. This one is admittedly a fair bit better -- for one thing, we didn't pay £4.1 million for it! -- but have some pride in your work, for goodness sake!
