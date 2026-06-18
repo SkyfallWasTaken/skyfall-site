@@ -2,7 +2,7 @@
 import { defineConfig, envField } from "astro/config";
 
 import mdx from "@astrojs/mdx";
-import sitemap from "@inox-tools/sitemap-ext";
+import sitemap from "@astrojs/sitemap";
 import expressiveCode from "astro-expressive-code";
 import webmanifest from "astro-webmanifest";
 
@@ -22,9 +22,7 @@ export default defineConfig({
       themes: ["catppuccin-macchiato", "catppuccin-latte"],
     }),
     mdx(),
-    sitemap({
-      includeByDefault: true,
-    }),
+    sitemap(),
     webmanifest({
       name: SITE_TITLE,
       icon: "src/assets/img/favicon.png", // source for favicon & icons
@@ -49,7 +47,9 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: /** @type {import("astro").ViteUserConfig["plugins"]} */ ([
+      tailwindcss(),
+    ]),
   },
 
   env: {

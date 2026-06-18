@@ -14,38 +14,37 @@
     "check": "biome check && bun knip && astro check"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.6",
-    "@astrojs/mdx": "4.3.13",
-    "@astrojs/rss": "4.0.15",
-    "@astrojs/vercel": "9.0.4",
+    "@astrojs/check": "0.9.9",
+    "@astrojs/mdx": "6.0.1",
+    "@astrojs/rss": "4.0.18",
+    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/vercel": "10.0.8",
     "@fontsource-variable/ibm-plex-sans": "^5.2.8",
     "@fontsource/fira-code": "^5.2.7",
-    "@inox-tools/sitemap-ext": "^0.7.1",
     "@skyfall-powered/simple-icons-astro": "^12.4.2",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "5.16.11",
-    "astro-expressive-code": "^0.41.6",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "6.4.3",
+    "astro-expressive-code": "^0.41.7",
     "astro-webmanifest": "^1.0.0",
-    "date-fns": "^4.1.0",
+    "date-fns": "^4.4.0",
     "lanyard-wrapper": "2.0.1",
     "lucide-astro": "^0.556.0",
-    "preact": "^10.28.2",
-    "remark-github-blockquote-alert": "^2.0.1",
-    "satori": "^0.19.1",
-    "sharp": "^0.34.5",
-    "tailwindcss": "^4.1.18",
+    "preact": "^10.29.2",
+    "remark-github-blockquote-alert": "^2.1.0",
+    "satori": "^0.19.3",
+    "sharp": "0.34.4",
+    "tailwindcss": "^4.3.0",
     "tw-to-css": "^0.0.12"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@tailwindcss/typography": "^0.5.19",
-    "@types/node": "^22.19.7",
-    "knip": "^5.81.0",
+    "@types/node": "^22.19.19",
+    "knip": "^5.88.1",
     "typescript": "^5.9.3"
   },
-  "trustedDependencies": [
-    "@sentry/cli",
-    "esbuild",
-    "sharp"
-  ]
+  "overrides": {
+    "sharp": "0.34.4"
+  },
+  "trustedDependencies": ["@sentry/cli", "esbuild", "sharp"]
 }

@@ -25,7 +25,10 @@ export async function GET({ params }: { params: Params }) {
   const element = OpenGraphImage(post);
   const jsx = inlineTailwind(element);
   const png = await PNG(jsx);
-  return new Response(png, {
+  const body = new Uint8Array(png.byteLength);
+  body.set(png);
+
+  return new Response(body, {
     headers: {
       "Content-Type": "image/png",
     },

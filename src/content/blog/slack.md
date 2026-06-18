@@ -41,3 +41,7 @@ Anyway, we're moving to Mattermost. This experience has taught us that owning yo
 ---
 
 _This post was rushed out because, well, this has been a shock! If you'd like any additional details then feel free to send me an email._
+
+---
+
+**Addendum/conflict of interest notice (3rd June 2026):** As of February 2026, I work as a contractor at Hack Club. I started my role ~5 months after this post was published, and my role was not a reward for writing this post. Nevertheless, it may be a good idea to bear this in mind.
